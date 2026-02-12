@@ -1,0 +1,5 @@
+# TechMeOut Website
+User-agent: *
+Allow: /
+
+Sitemap: https://www.techmeout.it/sitemap.xml
