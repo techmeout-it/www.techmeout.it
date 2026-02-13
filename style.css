@@ -35,7 +35,7 @@
     --accent-gradient: linear-gradient(135deg, #4f8fff 0%, #a78bfa 100%);
 
     /* Spacing */
-    --section-padding: 80px 0;
+    --section-padding: 48px 0;
     --container-width: 1140px;
     --container-padding: 0 24px;
 
@@ -136,7 +136,7 @@ h1, h2, h3, h4 {
 }
 
 .section__title {
-    font-size: clamp(2rem, 4vw, 3rem);
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
     margin-bottom: 16px;
 }
 
@@ -149,7 +149,7 @@ h1, h2, h3, h4 {
 
 .section__header {
     text-align: center;
-    margin-bottom: 64px;
+    margin-bottom: 40px;
 }
 
 .section__header .section__desc {
@@ -402,7 +402,7 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     position: relative;
-    padding: 80px 0 16px;
+    padding: 70px 0 8px;
     overflow: hidden;
 }
 
@@ -435,7 +435,7 @@ h1, h2, h3, h4 {
 }
 
 .hero__title {
-    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-size: clamp(1.7rem, 3.5vw, 2.6rem);
     margin-bottom: 24px;
     letter-spacing: -0.03em;
 }
@@ -444,7 +444,7 @@ h1, h2, h3, h4 {
     font-size: 1.1rem;
     color: var(--text-secondary);
     max-width: 560px;
-    margin: 0 auto 24px;
+    margin: 0 auto 0;
     line-height: 1.8;
 }
 
@@ -1163,7 +1163,7 @@ h1, h2, h3, h4 {
 /* === RESPONSIVE === */
 @media (max-width: 1024px) {
     :root {
-        --section-padding: 80px 0;
+        --section-padding: 48px 0;
     }
 
     .about-grid {
@@ -1181,7 +1181,7 @@ h1, h2, h3, h4 {
 
 @media (max-width: 768px) {
     :root {
-        --section-padding: 64px 0;
+        --section-padding: 40px 0;
     }
 
     .nav__toggle {
@@ -1222,7 +1222,7 @@ h1, h2, h3, h4 {
     }
 
     .hero__title {
-        font-size: clamp(2rem, 8vw, 3rem);
+        font-size: clamp(1.7rem, 6vw, 2.6rem);
     }
 
     .hero__stats {
@@ -1351,14 +1351,14 @@ h1, h2, h3, h4 {
 
 /* === PAGE HERO (inner pages) === */
 .page-hero {
-    padding: 160px 0 64px;
+    padding: 120px 0 16px;
     text-align: center;
     position: relative;
     z-index: 1;
 }
 
 .page-hero__title {
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
     margin-bottom: 16px;
     letter-spacing: -0.03em;
 }
@@ -1452,7 +1452,7 @@ h1, h2, h3, h4 {
 }
 
 .case-study__title {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 16px;
     letter-spacing: -0.02em;
@@ -1579,6 +1579,6 @@ h1, h2, h3, h4 {
     }
 
     .case-study__title {
-        font-size: 1.3rem;
+        font-size: 1.15rem;
     }
 }

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Nav
             nav_servizi: 'Services',
             nav_realizzati: 'Projects',
-            nav_community: 'Community',
+            nav_community: 'The Communities',
             nav_chi_siamo: 'About Us',
             nav_processo: 'Process',
             nav_contattaci: 'Contact Us',
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             hero_title: 'Your ideas into <span class="text-gradient">digital experiences</span>',
             hero_subtitle: 'We design and develop modern, fast and optimized websites to help your business grow online.',
             hero_cta: 'Start a project',
-            hero_cta2: 'Explore services',
+            hero_cta2: 'Supported<br>Communities',
 
             // Services
             services_tag: 'What we do',
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Community page
             community_tag: 'Community Support',
             community_title: 'Supporting <span class="text-gradient">digital communities</span>',
-            community_subtitle: 'Not just websites: we support communities in managing and organizing their events, providing tech expertise and digital tools for the success of every gathering.',
+            community_subtitle: 'Not just websites: we support communities in managing and organizing their events, providing tech expertise and digital tools for the success of every event.',
             community_services_tag: 'What we offer',
             community_services_title: 'Our community support',
             community_services_desc: 'A complete package of skills and tools at the service of digital communities.',
