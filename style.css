@@ -162,6 +162,21 @@ h1, h2, h3, h4 {
     z-index: 1;
 }
 
+/* === NEON DIVIDER === */
+.neon-divider {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.neon-divider__line {
+    width: 100%;
+    max-width: 800px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #39ff85, transparent);
+    box-shadow: 0 0 10px rgba(57, 255, 133, 0.4), 0 0 30px rgba(57, 255, 133, 0.15);
+}
+
 /* === BUTTONS === */
 .btn {
     display: inline-flex;
@@ -222,8 +237,22 @@ h1, h2, h3, h4 {
     background: rgba(10, 10, 10, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-subtle);
+    border-bottom: none;
     padding: 12px 0;
+}
+
+.header.scrolled::after,
+.header--solid::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 800px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #39ff85, transparent);
+    box-shadow: 0 0 10px rgba(57, 255, 133, 0.4), 0 0 30px rgba(57, 255, 133, 0.15);
 }
 
 .nav {
@@ -237,11 +266,15 @@ h1, h2, h3, h4 {
     font-size: 1.15rem;
     font-weight: 600;
     letter-spacing: -0.02em;
-    transition: opacity var(--transition-fast);
+    transition: color var(--transition-base), opacity var(--transition-fast);
 }
 
 .nav__logo:hover {
     opacity: 0.8;
+}
+
+.header.scrolled .nav__logo {
+    color: #39ff85;
 }
 
 .logo-bracket {
@@ -490,6 +523,7 @@ h1, h2, h3, h4 {
     color: var(--text-secondary);
     line-height: 1.75;
     margin-bottom: 16px;
+    text-align: justify;
 }
 
 .service-card__tags {
@@ -607,6 +641,7 @@ h1, h2, h3, h4 {
     font-weight: 600;
     margin-bottom: 8px;
     letter-spacing: -0.01em;
+    color: var(--accent-color);
 }
 
 .project-card__desc {
@@ -1002,7 +1037,7 @@ h1, h2, h3, h4 {
 
 /* === FOOTER === */
 .footer {
-    border-top: 1px solid var(--border-subtle);
+    border-top: none;
     padding-top: 64px;
     background: var(--bg-secondary);
     position: relative;
