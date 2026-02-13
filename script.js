@@ -211,6 +211,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ===== THEME TOGGLE =====
+    const themeToggle = document.getElementById('themeToggle');
+    const savedTheme = localStorage.getItem('techmeout-theme') || 'dark';
+
+    // Apply saved theme immediately
+    if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const current = document.documentElement.getAttribute('data-theme');
+            const next = current === 'light' ? 'dark' : 'light';
+
+            if (next === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+
+            localStorage.setItem('techmeout-theme', next);
+        });
+    }
+
     // ===== HEADER SCROLL EFFECT =====
     const header = document.getElementById('header');
 
