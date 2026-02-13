@@ -1387,3 +1387,198 @@ h1, h2, h3, h4 {
     border: 1px solid var(--border-subtle);
     background: var(--bg-card);
 }
+
+/* === COMMUNITY PAGE === */
+.community-services {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-subtle);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.community-cases {
+    background: var(--bg-primary);
+}
+
+/* Case Study */
+.case-study {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
+    padding: 48px;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-card);
+    transition: all var(--transition-smooth);
+}
+
+.case-study:last-child {
+    margin-bottom: 0;
+}
+
+.case-study:hover {
+    border-color: rgba(79, 143, 255, 0.12);
+}
+
+.case-study--reverse {
+    direction: rtl;
+}
+
+.case-study--reverse > * {
+    direction: ltr;
+}
+
+.case-study__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 100px;
+    background: var(--accent-color-glow);
+    border: 1px solid var(--accent-color-soft);
+    color: var(--accent-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+}
+
+.case-study__badge svg {
+    width: 14px;
+    height: 14px;
+}
+
+.case-study__title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.case-study__desc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.85;
+    margin-bottom: 24px;
+    text-align: justify;
+}
+
+.case-study__desc strong {
+    color: var(--text-primary);
+}
+
+.case-study__services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+}
+
+.case-study__service-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    padding: 5px 12px;
+    border-radius: 100px;
+    background: rgba(57, 255, 133, 0.06);
+    border: 1px solid rgba(57, 255, 133, 0.15);
+    color: #39ff85;
+    letter-spacing: 0.02em;
+}
+
+.case-study__link {
+    gap: 8px;
+}
+
+.case-study__link svg {
+    transition: transform var(--transition-fast);
+}
+
+.case-study__link:hover svg {
+    transform: translate(3px, -3px);
+}
+
+/* Case Study Visual / Preview */
+.case-study__preview {
+    padding: 32px 24px;
+}
+
+.case-study__preview-content {
+    text-align: center;
+}
+
+.preview-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    line-height: 1;
+}
+
+.case-study__preview-content h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--text-primary);
+}
+
+.case-study__preview-content p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.preview-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.preview-stat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-subtle);
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+}
+
+.preview-stat__icon {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+/* Community responsive */
+@media (max-width: 1024px) {
+    .case-study {
+        gap: 40px;
+        padding: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .case-study {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 28px;
+    }
+
+    .case-study--reverse {
+        direction: ltr;
+    }
+
+    .case-study__visual {
+        order: -1;
+    }
+
+    .case-study__title {
+        font-size: 1.3rem;
+    }
+}

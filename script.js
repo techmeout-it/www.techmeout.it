@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Nav
             nav_servizi: 'Services',
             nav_realizzati: 'Projects',
+            nav_community: 'Community',
             nav_chi_siamo: 'About Us',
             nav_processo: 'Process',
             nav_contattaci: 'Contact Us',
@@ -101,6 +102,31 @@ document.addEventListener('DOMContentLoaded', () => {
             proj_t4_desc: 'Passion, friendship and adventure on four wheels. A group of enthusiasts of the legendary Volkswagen T4, the iconic van produced from 1990 to 2003 that made van and camper history.',
             proj_cta_title: 'Yours could be next',
             proj_cta_desc: 'Want your project featured here? Tell us about your idea and let\'s build your website together.',
+
+            // Community page
+            community_tag: 'Community Support',
+            community_title: 'Supporting <span class="text-gradient">digital communities</span>',
+            community_subtitle: 'Not just websites: we support communities in managing and organizing their events, providing tech expertise and digital tools for the success of every gathering.',
+            community_services_tag: 'What we offer',
+            community_services_title: 'Our community support',
+            community_services_desc: 'A complete package of skills and tools at the service of digital communities.',
+            comm_svc1_title: 'Community Website',
+            comm_svc1_desc: 'We design and develop the community website: a curated, modern and functional digital showcase that tells the group\'s story and strengthens its online identity.',
+            comm_svc2_title: 'Event Organization',
+            comm_svc2_desc: 'We support event planning and management: from logistics to communication, we help coordinate gatherings, meetups and group outings efficiently.',
+            comm_svc3_title: 'Community Management',
+            comm_svc3_desc: 'We offer consulting on managing social channels and online groups, helping to keep the community active, engaged and constantly growing.',
+            comm_svc4_title: 'Tech Tools',
+            comm_svc4_desc: 'We provide dedicated digital tools: registration forms, participant management systems, interactive maps and everything needed for a perfectly organized event.',
+            community_cases_tag: 'Supported communities',
+            community_cases_title: 'Who chose us',
+            community_cases_desc: 'Here are some of the communities we actively support with our services.',
+            case_tende_title: 'Rooftop Tents and Camping',
+            case_tende_desc: 'Italy\'s #1 Community for Rooftop Tents and Camping. In addition to designing and developing the website <strong>tendedatettoecampeggio.it</strong>, we actively support the group in managing and organizing national gatherings: from creating registration forms to logistics coordination, to pre and post event communication. We provide digital tools that simplify the organization and ensure the success of every meetup.',
+            case_t4_title: 'T4 Triveneto',
+            case_t4_desc: 'Passion, friendship and adventure on four wheels. For the group of enthusiasts of the legendary Volkswagen T4, we built the website <strong>t4triveneto.com</strong> and support them in organizing gatherings and group meetups. We provide tools for managing registrations, participant communication and event planning, bringing a tech and organized approach to a community that lives on passion and sharing.',
+            community_cta_title: 'Have a community to support?',
+            community_cta_desc: 'Tell us about your group. Together we\'ll find the best tools and solutions to grow your community and organize memorable events.',
         }
     };
 
@@ -254,7 +280,9 @@ document.addEventListener('DOMContentLoaded', () => {
             '.about__visual',
             '.process-step',
             '.contact__info',
-            '.contact__form'
+            '.contact__form',
+            '.case-study',
+            '.case-study__visual'
         ];
 
         selectors.forEach(selector => {
