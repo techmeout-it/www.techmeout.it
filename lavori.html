@@ -1,23 +1,23 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="I lavori di TechMeOut — Scopri i siti web che abbiamo progettato e sviluppato per i nostri clienti. Progetti reali, risultati concreti.">
+    <meta name="description" content="I lavori di TechMeOut â€” Scopri i siti web che abbiamo progettato e sviluppato per i nostri clienti. Progetti reali, risultati concreti.">
     <meta name="keywords" content="progetti web, siti realizzati, lavori sviluppo web, TechMeOut progetti, web design esempi">
     <meta name="author" content="TechMeOut">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#0f0f0f">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="I nostri lavori — TechMeOut">
+    <meta property="og:title" content="I nostri lavori â€” TechMeOut">
     <meta property="og:description" content="Scopri i siti web che abbiamo progettato e sviluppato. Progetti reali, risultati concreti.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.techmeout.it/lavori">
     <meta property="og:image" content="https://www.techmeout.it/og-image.jpg">
     <meta property="og:locale" content="it_IT">
 
-    <title>I nostri lavori — TechMeOut</title>
+    <title>I nostri lavori â€” TechMeOut</title>
 
     <link rel="canonical" href="https://www.techmeout.it/lavori">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -40,11 +40,19 @@
             </button>
 
             <ul class="nav__menu" id="navMenu" role="menubar">
-                <li role="none"><a href="index.html#servizi" class="nav__link" role="menuitem">Servizi</a></li>
-                <li role="none"><a href="lavori.html" class="nav__link nav__link--active" role="menuitem">Realizzati</a></li>
-                <li role="none"><a href="index.html#chi-siamo" class="nav__link" role="menuitem">Chi Siamo</a></li>
-                <li role="none"><a href="index.html#processo" class="nav__link" role="menuitem">Processo</a></li>
-                <li role="none"><a href="index.html#contatti" class="nav__link nav__link--cta" role="menuitem">Contattaci</a></li>
+                <li role="none"><a href="index.html#servizi" class="nav__link" role="menuitem" data-i18n="nav_servizi">Servizi</a></li>
+                <li role="none"><a href="lavori.html" class="nav__link nav__link--active" role="menuitem" data-i18n="nav_realizzati">Realizzati</a></li>
+                <li role="none"><a href="index.html#chi-siamo" class="nav__link" role="menuitem" data-i18n="nav_chi_siamo">Chi Siamo</a></li>
+                <li role="none"><a href="index.html#processo" class="nav__link" role="menuitem" data-i18n="nav_processo">Processo</a></li>
+                <li role="none"><a href="index.html#contatti" class="nav__link nav__link--cta" role="menuitem" data-i18n="nav_contattaci">Contattaci</a></li>
+                <li role="none" class="nav__lang">
+                    <button class="lang-btn lang-btn--active" data-lang="it" aria-label="Italiano">
+                        <svg viewBox="0 0 36 24" width="22" height="15"><rect width="12" height="24" fill="#009246"/><rect x="12" width="12" height="24" fill="#fff"/><rect x="24" width="12" height="24" fill="#CE2B37"/></svg>
+                    </button>
+                    <button class="lang-btn" data-lang="en" aria-label="English">
+                        <svg viewBox="0 0 60 30" width="22" height="15"><clipPath id="s"><rect width="60" height="30"/></clipPath><clipPath id="t"><polygon points="30,15 60,0 60,30 0,30 0,0"/></clipPath><g clip-path="url(#s)"><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/></g></svg>
+                    </button>
+                </li>
             </ul>
         </nav>
     </header>
@@ -53,11 +61,11 @@
         <!-- ===== PAGE HERO ===== -->
         <section class="page-hero">
             <div class="container">
-                <span class="section__tag">I nostri lavori</span>
-                <h1 class="page-hero__title">Progetti realizzati</h1>
-                <p class="page-hero__subtitle">
+                <span class="section__tag" data-i18n="lavori_tag">I nostri lavori</span>
+                <h1 class="page-hero__title" data-i18n="lavori_title">Progetti realizzati</h1>
+                <p class="page-hero__subtitle" data-i18n="lavori_subtitle">
                     Una selezione dei siti web che abbiamo progettato e sviluppato.<br>
-                    Ogni progetto è unico, pensato su misura per rispondere a esigenze specifiche.
+                    Ogni progetto Ã¨ unico, pensato su misura per rispondere a esigenze specifiche.
                 </p>
             </div>
         </section>
@@ -75,11 +83,11 @@
                         </div>
                         <div class="project-card__body">
                             <h3 class="project-card__title">Ansible Pilot & By Example</h3>
-                            <p class="project-card__desc">Diventa un maestro dell'automazione con Ansible. Tutorial pratici, esempi reali e un percorso completo per portare le tue skill DevOps a livello professionale.</p>
+                            <p class="project-card__desc" data-i18n="proj_ansible_desc">Diventa un maestro dell'automazione con Ansible. Tutorial pratici, esempi reali e un percorso completo per portare le tue skill DevOps a livello professionale.</p>
                             <span class="project-card__tag">DevOps & Automazione</span>
                         </div>
                         <div class="project-card__link">
-                            <span>Visita il sito</span>
+                            <span data-i18n="visit_site">Visita il sito</span>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                         </div>
                     </a>
@@ -91,11 +99,11 @@
                         </div>
                         <div class="project-card__body">
                             <h3 class="project-card__title">Copy Paste Learn</h3>
-                            <p class="project-card__desc">Tutorial pratici, strumenti reali, competenze subito spendibili. Impara Ansible, Terraform e Kubernetes con guide pensate per l'ambiente di produzione e accelera la tua crescita come Cloud Engineer.</p>
+                            <p class="project-card__desc" data-i18n="proj_cpl_desc">Tutorial pratici, strumenti reali, competenze subito spendibili. Impara Ansible, Terraform e Kubernetes con guide pensate per l'ambiente di produzione e accelera la tua crescita come Cloud Engineer.</p>
                             <span class="project-card__tag">Education & DevOps</span>
                         </div>
                         <div class="project-card__link">
-                            <span>Visita il sito</span>
+                            <span data-i18n="visit_site">Visita il sito</span>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                         </div>
                     </a>
@@ -107,11 +115,11 @@
                         </div>
                         <div class="project-card__body">
                             <h3 class="project-card__title">Luca Berton</h3>
-                            <p class="project-card__desc">AI, Kubernetes e Cloud automation per far crescere il tuo business. La competenza di un consulente esperto per trasformare la tua infrastruttura in modo rapido, moderno ed efficace.</p>
+                            <p class="project-card__desc" data-i18n="proj_lb_desc">AI, Kubernetes e Cloud automation per far crescere il tuo business. La competenza di un consulente esperto per trasformare la tua infrastruttura in modo rapido, moderno ed efficace.</p>
                             <span class="project-card__tag">Consulenza IT</span>
                         </div>
                         <div class="project-card__link">
-                            <span>Visita il sito</span>
+                            <span data-i18n="visit_site">Visita il sito</span>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                         </div>
                     </a>
@@ -123,11 +131,11 @@
                         </div>
                         <div class="project-card__body">
                             <h3 class="project-card__title">Open Empower</h3>
-                            <p class="project-card__desc">Trasforma la tua infrastruttura con piattaforme AI‑ready. Riduci i costi, accelera i rilasci e resta conforme, grazie a una consulenza indipendente e una soluzione di Platform Engineering pronta all'uso.</p>
+                            <p class="project-card__desc" data-i18n="proj_oe_desc">Trasforma la tua infrastruttura con piattaforme AIâ€‘ready. Riduci i costi, accelera i rilasci e resta conforme, grazie a una consulenza indipendente e una soluzione di Platform Engineering pronta all'uso.</p>
                             <span class="project-card__tag">Platform Engineering</span>
                         </div>
                         <div class="project-card__link">
-                            <span>Visita il sito</span>
+                            <span data-i18n="visit_site">Visita il sito</span>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                         </div>
                     </a>
@@ -139,11 +147,11 @@
                         </div>
                         <div class="project-card__body">
                             <h3 class="project-card__title">Terraform Pilot</h3>
-                            <p class="project-card__desc">Automatizza meglio, ogni giorno. Scopri il metodo per imparare Terraform in modo rapido ed efficace, con un approccio DevOps creativo pensato per Cloud Engineer, SysAdmin e professionisti IT che vogliono fare un salto di qualità nell'automazione.</p>
+                            <p class="project-card__desc" data-i18n="proj_tf_desc">Automatizza meglio, ogni giorno. Scopri il metodo per imparare Terraform in modo rapido ed efficace, con un approccio DevOps creativo pensato per Cloud Engineer, SysAdmin e professionisti IT che vogliono fare un salto di qualitÃ  nell'automazione.</p>
                             <span class="project-card__tag">DevOps & Cloud</span>
                         </div>
                         <div class="project-card__link">
-                            <span>Visita il sito</span>
+                            <span data-i18n="visit_site">Visita il sito</span>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                         </div>
                     </a>
@@ -155,11 +163,11 @@
                         </div>
                         <div class="project-card__body">
                             <h3 class="project-card__title">Visionary Tech Ventures</h3>
-                            <p class="project-card__desc">Cloud, cybersecurity e trasformazione digitale per far crescere il tuo business. Soluzioni IT innovative e consulenza strategica per aiutarti a prosperare in un mondo tecnologico che cambia velocemente.</p>
+                            <p class="project-card__desc" data-i18n="proj_vtv_desc">Cloud, cybersecurity e trasformazione digitale per far crescere il tuo business. Soluzioni IT innovative e consulenza strategica per aiutarti a prosperare in un mondo tecnologico che cambia velocemente.</p>
                             <span class="project-card__tag">Tech & Business</span>
                         </div>
                         <div class="project-card__link">
-                            <span>Visita il sito</span>
+                            <span data-i18n="visit_site">Visita il sito</span>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                         </div>
                     </a>
@@ -171,11 +179,11 @@
                         </div>
                         <div class="project-card__body">
                             <h3 class="project-card__title">Tende da Tetto e Campeggio</h3>
-                            <p class="project-card__desc">La Community Italiana N°1 per le Tende da Tetto e Campeggio. Scopri i migliori campeggi, condividi le tue avventure e trova tutto quello che ti serve per viaggiare con la tua tenda da tetto.</p>
+                            <p class="project-card__desc" data-i18n="proj_tende_desc">La Community Italiana NÂ°1 per le Tende da Tetto e Campeggio. Scopri i migliori campeggi, condividi le tue avventure e trova tutto quello che ti serve per viaggiare con la tua tenda da tetto.</p>
                             <span class="project-card__tag">Community</span>
                         </div>
                         <div class="project-card__link">
-                            <span>Visita il sito</span>
+                            <span data-i18n="visit_site">Visita il sito</span>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                         </div>
                     </a>
@@ -187,11 +195,11 @@
                         </div>
                         <div class="project-card__body">
                             <h3 class="project-card__title">T4 Triveneto</h3>
-                            <p class="project-card__desc">Passione, amicizia e avventura su quattro ruote. Gruppo di appassionati del leggendario Volkswagen T4, il mitico furgone prodotto dal 1990 al 2003 che ha fatto la storia dei van e camperizzati.</p>
+                            <p class="project-card__desc" data-i18n="proj_t4_desc">Passione, amicizia e avventura su quattro ruote. Gruppo di appassionati del leggendario Volkswagen T4, il mitico furgone prodotto dal 1990 al 2003 che ha fatto la storia dei van e camperizzati.</p>
                             <span class="project-card__tag">Community & Automotive</span>
                         </div>
                         <div class="project-card__link">
-                            <span>Visita il sito</span>
+                            <span data-i18n="visit_site">Visita il sito</span>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                         </div>
                     </a>
@@ -203,11 +211,11 @@
                         </div>
                         <div class="project-card__body project-card__body--cta">
                             <div class="project-card__cta-icon">+</div>
-                            <h3 class="project-card__title">Il prossimo potrebbe essere il tuo</h3>
-                            <p class="project-card__desc">Vuoi che il tuo progetto compaia qui? Raccontaci la tua idea e costruiamo insieme il tuo sito web.</p>
+                            <h3 class="project-card__title" data-i18n="proj_cta_title">Il prossimo potrebbe essere il tuo</h3>
+                            <p class="project-card__desc" data-i18n="proj_cta_desc">Vuoi che il tuo progetto compaia qui? Raccontaci la tua idea e costruiamo insieme il tuo sito web.</p>
                         </div>
                         <div class="project-card__link">
-                            <span>Contattaci</span>
+                            <span data-i18n="contact_us">Contattaci</span>
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                         </div>
                     </a>
@@ -218,11 +226,11 @@
         <!-- ===== CTA ===== -->
         <section class="section cta-section">
             <div class="container cta-box">
-                <h2 class="section__title">Hai un progetto in mente?</h2>
-                <p class="section__desc" style="margin: 0 auto 32px;">
+                <h2 class="section__title" data-i18n="contact_title">Hai un progetto in mente?</h2>
+                <p class="section__desc" style="margin: 0 auto 32px;" data-i18n="lavori_cta_desc">
                     Raccontaci la tua idea. Saremo felici di trasformarla nel tuo prossimo sito web.
                 </p>
-                <a href="index.html#contatti" class="btn btn--primary">Contattaci</a>
+                <a href="index.html#contatti" class="btn btn--primary" data-i18n="nav_contattaci">Contattaci</a>
             </div>
         </section>
     </main>
@@ -236,30 +244,30 @@
                 <a href="index.html" class="nav__logo" aria-label="TechMeOut Home">
                     <span class="logo-bracket">&lt;</span>TechMeOut<span class="logo-bracket"> /&gt;</span>
                 </a>
-                <p class="footer__tagline">Sviluppo web professionale.<br>Dalla tua idea al tuo sito.</p>
+                <p class="footer__tagline" data-i18n="footer_tagline">Sviluppo web professionale.<br>Dalla tua idea al tuo sito.</p>
             </div>
             <div class="footer__links">
-                <h4 class="footer__heading">Navigazione</h4>
+                <h4 class="footer__heading" data-i18n="footer_nav">Navigazione</h4>
                 <ul>
-                    <li><a href="index.html#servizi">Servizi</a></li>
-                    <li><a href="lavori.html">Realizzati</a></li>
-                    <li><a href="index.html#chi-siamo">Chi Siamo</a></li>
-                    <li><a href="index.html#processo">Processo</a></li>
-                    <li><a href="index.html#contatti">Contatti</a></li>
+                    <li><a href="index.html#servizi" data-i18n="nav_servizi">Servizi</a></li>
+                    <li><a href="lavori.html" data-i18n="nav_realizzati">Realizzati</a></li>
+                    <li><a href="index.html#chi-siamo" data-i18n="nav_chi_siamo">Chi Siamo</a></li>
+                    <li><a href="index.html#processo" data-i18n="nav_processo">Processo</a></li>
+                    <li><a href="index.html#contatti" data-i18n="footer_contatti">Contatti</a></li>
                 </ul>
             </div>
             <div class="footer__links">
-                <h4 class="footer__heading">Servizi</h4>
+                <h4 class="footer__heading" data-i18n="footer_servizi">Servizi</h4>
                 <ul>
-                    <li><a href="index.html#servizi">Sviluppo Web</a></li>
-                    <li><a href="index.html#servizi">Web Design</a></li>
+                    <li><a href="index.html#servizi" data-i18n="svc1_title">Sviluppo Web</a></li>
+                    <li><a href="index.html#servizi" data-i18n="svc2_title">Web Design</a></li>
                     <li><a href="index.html#servizi">SEO</a></li>
-                    <li><a href="index.html#servizi">Manutenzione</a></li>
+                    <li><a href="index.html#servizi" data-i18n="footer_manutenzione">Manutenzione</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer__bottom container">
-            <p>&copy; 2026 TechMeOut. Tutti i diritti riservati.</p>
+            <p data-i18n="footer_copy">&copy; 2026 TechMeOut. Tutti i diritti riservati.</p>
         </div>
     </footer>
 
