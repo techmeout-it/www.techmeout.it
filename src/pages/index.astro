@@ -1,0 +1,307 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+    title="TechMeOut — Sviluppo Web Professionale"
+    description="TechMeOut — Studio di sviluppo web professionale. Creiamo siti web moderni, performanti e su misura per far crescere il tuo business online."
+    keywords="sviluppo web, siti web, web design, creazione siti internet, agenzia web, sviluppo siti professionali, TechMeOut"
+    canonicalUrl="https://www.techmeout.it"
+    ogTitle="TechMeOut — Sviluppo Web Professionale"
+    ogDescription="Creiamo siti web moderni, performanti e su misura per far crescere il tuo business online."
+    ogUrl="https://www.techmeout.it"
+    currentPage="home"
+>
+    <!-- Slot head: Twitter Card + JSON-LD (solo homepage) -->
+    <Fragment slot="head">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="TechMeOut — Sviluppo Web Professionale">
+        <meta name="twitter:description" content="Creiamo siti web moderni, performanti e su misura per far crescere il tuo business online.">
+
+        <script type="application/ld+json" set:html={JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "TechMeOut",
+            "description": "Studio di sviluppo web professionale. Creiamo siti web moderni, performanti e su misura.",
+            "url": "https://www.techmeout.it",
+            "logo": "https://www.techmeout.it/favicon.svg",
+            "sameAs": [],
+            "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "IT"
+            },
+            "serviceType": ["Sviluppo Web", "Web Design", "SEO", "Consulenza Digitale"],
+            "areaServed": {
+                "@type": "Country",
+                "name": "Italia"
+            }
+        })} />
+    </Fragment>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero__bg-grid" aria-hidden="true"></div>
+        <div class="container hero__content">
+            <p class="hero__tag" data-i18n="hero_tag">Sviluppo Web Professionale</p>
+            <h1 class="hero__title" data-i18n="hero_title">Le tue idee in <span class="text-gradient">esperienze digitali</span></h1>
+            <p class="hero__subtitle" data-i18n="hero_subtitle">
+                Progettiamo e sviluppiamo siti web moderni, veloci e ottimizzati 
+                per aiutare il tuo business a crescere online.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== SERVIZI ===== -->
+    <section class="section servizi" id="servizi">
+        <div class="container">
+            <div class="section__header">
+                <span class="section__tag" data-i18n="services_tag">Cosa facciamo</span>
+                <h2 class="section__title" data-i18n="services_title">I nostri servizi</h2>
+                <p class="section__desc" data-i18n="services_desc">Dalla progettazione al lancio, e oltre.</p>
+            </div>
+
+            <div class="services-grid">
+                <article class="service-card">
+                    <div class="service-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="service-card__title" data-i18n="svc1_title">Sviluppo Web</h3>
+                    <p class="service-card__desc" data-i18n="svc1_desc">
+                        Siti web su misura, sviluppati con le tecnologie più moderne per garantire 
+                        velocità, sicurezza e un'esperienza utente impeccabile.
+                    </p>
+                    <ul class="service-card__tags">
+                        <li>HTML / CSS / JS</li>
+                        <li>React / Next.js</li>
+                        <li>Performance</li>
+                    </ul>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3 class="service-card__title" data-i18n="svc2_title">Web Design</h3>
+                    <p class="service-card__desc" data-i18n="svc2_desc">
+                        Design eleganti e funzionali che comunicano il tuo brand. 
+                        Ogni interfaccia è progettata per rendere chiara e diretta la navigazione ai visitatori.
+                    </p>
+                    <ul class="service-card__tags">
+                        <li>UI / UX Design</li>
+                        <li>Responsive</li>
+                        <li>Brand Identity</li>
+                    </ul>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                            <line x1="11" y1="8" x2="11" y2="14"></line>
+                            <line x1="8" y1="11" x2="14" y2="11"></line>
+                        </svg>
+                    </div>
+                    <h3 class="service-card__title" data-i18n="svc3_title">SEO & Ottimizzazione</h3>
+                    <p class="service-card__desc" data-i18n="svc3_desc">
+                        Ottimizzazione tecnica e strategica per farti trovare su Google. 
+                        Ogni sito che realizziamo è pensato per posizionarsi al meglio.
+                    </p>
+                    <ul class="service-card__tags">
+                        <li>SEO Tecnico</li>
+                        <li>Core Web Vitals</li>
+                        <li>Analytics</li>
+                    </ul>
+                </article>
+
+                <article class="service-card">
+                    <div class="service-card__icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="service-card__title" data-i18n="svc4_title">Manutenzione & Supporto</h3>
+                    <p class="service-card__desc" data-i18n="svc4_desc">
+                        Assistenza continua, aggiornamenti di sicurezza e monitoraggio delle performance 
+                        per mantenere il tuo sito sempre al top.
+                    </p>
+                    <ul class="service-card__tags">
+                        <li>Hosting</li>
+                        <li>Sicurezza</li>
+                        <li>Aggiornamenti</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CHI SIAMO ===== -->
+    <section class="section chi-siamo" id="chi-siamo">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about__text">
+                    <span class="section__tag" data-i18n="about_tag">Chi siamo</span>
+                    <h2 class="section__title" data-i18n="about_title">Due menti,<br>una missione digitale</h2>
+                    <p class="about__desc" data-i18n="about_desc1">
+                        Siamo due sviluppatori con la passione per il web e la tecnologia. 
+                        Abbiamo fondato <strong>TechMeOut</strong> con un obiettivo chiaro: 
+                        creare siti web che non siano solo belli da vedere, ma che funzionino davvero.
+                    </p>
+                    <p class="about__desc" data-i18n="about_desc2">
+                        Crediamo che ogni business meriti una presenza online professionale. 
+                        Per questo lavoriamo a stretto contatto con i nostri clienti, ascoltando le loro esigenze 
+                        e trasformandole in soluzioni concrete.
+                    </p>
+                    <div class="about__values">
+                        <div class="value">
+                            <span class="value__icon">&#9670;</span>
+                            <div>
+                                <h4 class="value__title" data-i18n="val1_title">Qualità</h4>
+                                <p class="value__desc" data-i18n="val1_desc">Codice pulito e standard elevati</p>
+                            </div>
+                        </div>
+                        <div class="value">
+                            <span class="value__icon">&#9670;</span>
+                            <div>
+                                <h4 class="value__title" data-i18n="val2_title">Trasparenza</h4>
+                                <p class="value__desc" data-i18n="val2_desc">Comunicazione diretta e onesta</p>
+                            </div>
+                        </div>
+                        <div class="value">
+                            <span class="value__icon">&#9670;</span>
+                            <div>
+                                <h4 class="value__title" data-i18n="val3_title">Innovazione</h4>
+                                <p class="value__desc" data-i18n="val3_desc">Sempre aggiornati sulle ultime tecnologie</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about__visual">
+                    <div class="code-window">
+                        <div class="code-window__bar">
+                            <span class="dot dot--red"></span>
+                            <span class="dot dot--yellow"></span>
+                            <span class="dot dot--green"></span>
+                            <span class="code-window__filename">techmeout.js</span>
+                        </div>
+                        <pre class="code-window__content"><code><span class="code-kw">const</span> <span class="code-var">techMeOut</span> = &#123;
+  <span class="code-prop">team</span>: [<span class="code-str">"Dev 1"</span>, <span class="code-str">"Dev 2"</span>],
+  <span class="code-prop">passione</span>: <span class="code-str">"∞"</span>,
+  <span class="code-prop">stack</span>: [
+    <span class="code-str">"HTML"</span>, <span class="code-str">"CSS"</span>, <span class="code-str">"JS"</span>,
+    <span class="code-str">"React"</span>, <span class="code-str">"Next.js"</span>
+  ],
+
+  <span class="code-fn">creaProgetto</span>(<span class="code-param">idea</span>) &#123;
+    <span class="code-kw">return</span> <span class="code-var">idea</span>
+      .analizza()
+      .progetta()
+      .sviluppa()
+      .lancia();
+  &#125;
+&#125;;</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROCESSO ===== -->
+    <section class="section processo" id="processo">
+        <div class="container">
+            <div class="section__header">
+                <span class="section__tag" data-i18n="process_tag">Come lavoriamo</span>
+                <h2 class="section__title" data-i18n="process_title">Il nostro processo</h2>
+                <p class="section__desc" data-i18n="process_desc">Un approccio strutturato per risultati eccellenti, ogni volta.</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="process-step__number">01</div>
+                    <h3 class="process-step__title" data-i18n="step1_title">Ascolto</h3>
+                    <p class="process-step__desc" data-i18n="step1_desc">
+                        Ci sediamo insieme a te per capire le tue esigenze, 
+                        i tuoi obiettivi e il tuo pubblico di riferimento.
+                    </p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step__number">02</div>
+                    <h3 class="process-step__title" data-i18n="step2_title">Progettazione</h3>
+                    <p class="process-step__desc" data-i18n="step2_desc">
+                        Disegniamo wireframe e mockup per definire 
+                        struttura, design e user experience del sito.
+                    </p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step__number">03</div>
+                    <h3 class="process-step__title" data-i18n="step3_title">Sviluppo</h3>
+                    <p class="process-step__desc" data-i18n="step3_desc">
+                        Trasformiamo il design in codice, 
+                        ottimizzando ogni dettaglio per performance e SEO.
+                    </p>
+                </div>
+                <div class="process-step">
+                    <div class="process-step__number">04</div>
+                    <h3 class="process-step__title" data-i18n="step4_title">Lancio & Supporto</h3>
+                    <p class="process-step__desc" data-i18n="step4_desc">
+                        Pubblichiamo il sito e ti accompagniamo 
+                        con supporto continuo e aggiornamenti.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTATTI ===== -->
+    <section class="section contatti" id="contatti">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact__info">
+                    <span class="section__tag" data-i18n="contact_tag">Parliamone</span>
+                    <h2 class="section__title" data-i18n="contact_title">Hai un progetto<br>in mente?</h2>
+                    <p class="contact__desc" data-i18n="contact_desc">
+                        Raccontaci la tua idea. Ti ricontatteremo il prima possibile 
+                        per discutere insieme come realizzarla.
+                    </p>
+                    <div class="contact__details">
+                        <a href="mailto:info@techmeout.it" class="contact__item">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            info@techmeout.it
+                        </a>
+                    </div>
+                </div>
+                <form class="contact__form" id="contactForm" action="#" method="POST" novalidate>
+                    <div class="form-group">
+                        <label for="name" class="form-label" data-i18n="form_name">Nome</label>
+                        <input type="text" id="name" name="name" class="form-input" data-i18n-ph="form_name_ph" placeholder="Il tuo nome" required autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label" data-i18n="form_email">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" data-i18n-ph="form_email_ph" placeholder="La tua email" required autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="message" class="form-label" data-i18n="form_message">Messaggio</label>
+                        <textarea id="message" name="message" class="form-input form-textarea" data-i18n-ph="form_message_ph" placeholder="Raccontaci il tuo progetto..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full" data-i18n="form_submit">
+                        Invia messaggio
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+</BaseLayout>

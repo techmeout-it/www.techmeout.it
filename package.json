@@ -1,0 +1,26 @@
+{
+  "name": "beta_dev_techmeout",
+  "version": "1.0.0",
+  "description": "Sito web dello studio di sviluppo **TechMeOut** — design moderno, toni scuri e interfaccia pulita.",
+  "main": "script.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OttoVonRasta/techmeout.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/OttoVonRasta/techmeout/issues"
+  },
+  "homepage": "https://github.com/OttoVonRasta/techmeout#readme",
+  "dependencies": {
+    "astro": "^5.17.2"
+  }
+}

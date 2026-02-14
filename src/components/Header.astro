@@ -1,0 +1,52 @@
+---
+export interface Props {
+    currentPage?: 'home' | 'lavori' | 'community';
+}
+
+const { currentPage = 'home' } = Astro.props;
+
+const isHome = currentPage === 'home';
+
+// Funzione helper per generare gli href corretti
+function href(anchor: string): string {
+    return isHome ? `#${anchor}` : `index.html#${anchor}`;
+}
+
+const headerClass = isHome ? 'header' : 'header header--solid';
+const logoHref = isHome ? '#hero' : 'index.html';
+---
+
+<header class={headerClass} id="header">
+    <nav class="nav container">
+        <a href={logoHref} class="nav__logo" aria-label="TechMeOut Home">
+            <span class="logo-bracket">&lt;</span>TechMeOut<span class="logo-bracket"> /&gt;</span>
+        </a>
+
+        <button class="nav__toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false">
+            <span class="hamburger"></span>
+        </button>
+
+        <ul class="nav__menu" id="navMenu" role="menubar">
+            <li role="none"><a href={href('servizi')} class="nav__link" role="menuitem" data-i18n="nav_servizi">Servizi</a></li>
+            <li role="none"><a href="lavori.html" class:list={['nav__link', { 'nav__link--active': currentPage === 'lavori' }]} role="menuitem" data-i18n="nav_realizzati">Realizzati</a></li>
+            <li role="none"><a href="community.html" class:list={['nav__link', { 'nav__link--active': currentPage === 'community' }]} role="menuitem" data-i18n="nav_community">Le Community</a></li>
+            <li role="none"><a href={href('chi-siamo')} class="nav__link" role="menuitem" data-i18n="nav_chi_siamo">Chi Siamo</a></li>
+            <li role="none"><a href={href('processo')} class="nav__link" role="menuitem" data-i18n="nav_processo">Processo</a></li>
+            <li role="none"><a href={href('contatti')} class="nav__link nav__link--cta" role="menuitem" data-i18n="nav_contattaci">Contattaci</a></li>
+            <li role="none" class="nav__lang">
+                <button class="lang-btn lang-btn--active" data-lang="it" aria-label="Italiano">
+                    <svg viewBox="0 0 36 24" width="22" height="15"><rect width="12" height="24" fill="#009246"/><rect x="12" width="12" height="24" fill="#fff"/><rect x="24" width="12" height="24" fill="#CE2B37"/></svg>
+                </button>
+                <button class="lang-btn" data-lang="en" aria-label="English">
+                    <svg viewBox="0 0 60 30" width="22" height="15"><clipPath id="s"><rect width="60" height="30"/></clipPath><clipPath id="t"><polygon points="30,15 60,0 60,30 0,30 0,0"/></clipPath><g clip-path="url(#s)"><rect width="60" height="30" fill="#012169"/><path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/><path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/></g></svg>
+                </button>
+            </li>
+            <li role="none" class="nav__theme">
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambia tema">
+                    <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                    <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                </button>
+            </li>
+        </ul>
+    </nav>
+</header>
