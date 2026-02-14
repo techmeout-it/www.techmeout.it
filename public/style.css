@@ -94,6 +94,7 @@ body {
     color: var(--text-primary);
     line-height: 1.75;
     overflow-x: hidden;
+    text-align: justify;
     transition: var(--theme-transition);
 }
 

@@ -1,7 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
-  <rect width="64" height="64" rx="14" fill="#111111"/>
-  <rect x="1" y="1" width="62" height="62" rx="13" stroke="#333" stroke-width="1"/>
-  <text x="10" y="44" font-family="monospace" font-weight="700" font-size="28" fill="#666">&lt;</text>
-  <text x="18" y="44" font-family="system-ui, sans-serif" font-weight="700" font-size="26" fill="#f0f0f0">T</text>
-  <text x="40" y="44" font-family="monospace" font-weight="700" font-size="28" fill="#666">/&gt;</text>
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0d1520"/>
+      <stop offset="100%" stop-color="#060a10"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <text x="4" y="43" font-family="monospace" font-weight="700" font-size="22" fill="#4da6ff" filter="url(#glow)">&lt;</text>
+  <text x="15" y="43" font-family="system-ui, sans-serif" font-weight="800" font-size="22" fill="#f0f0f0" letter-spacing="1">TMO</text>
+  <text x="47" y="43" font-family="monospace" font-weight="700" font-size="22" fill="#4da6ff" filter="url(#glow)">/&gt;</text>
 </svg>
