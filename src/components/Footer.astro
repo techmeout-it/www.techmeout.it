@@ -24,28 +24,20 @@ const logoHref = isHome ? '#hero' : 'index.html';
             </a>
             <p class="footer__tagline" data-i18n="footer_tagline">Sviluppo web professionale.<br>Dalla tua idea al tuo sito.</p>
         </div>
-        <div class="footer__links">
-            <h4 class="footer__heading" data-i18n="footer_nav">Navigazione</h4>
-            <ul>
-                <li><a href={href('servizi')} data-i18n="nav_servizi">Servizi</a></li>
-                <li><a href="lavori.html" data-i18n="nav_realizzati">Realizzati</a></li>
-                <li><a href="community.html" data-i18n="nav_community">Le Community</a></li>
-                <li><a href={href('chi-siamo')} data-i18n="nav_chi_siamo">Chi Siamo</a></li>
-                <li><a href={href('processo')} data-i18n="nav_processo">Processo</a></li>
-                <li><a href={href('contatti')} data-i18n="footer_contatti">Contatti</a></li>
-            </ul>
-        </div>
-        <div class="footer__links">
-            <h4 class="footer__heading" data-i18n="footer_servizi">Servizi</h4>
-            <ul>
-                <li><a href={href('servizi')} data-i18n="svc1_title">Sviluppo Web</a></li>
-                <li><a href={href('servizi')} data-i18n="svc2_title">Web Design</a></li>
-                <li><a href={href('servizi')}>SEO</a></li>
-                <li><a href={href('servizi')} data-i18n="footer_manutenzione">Manutenzione</a></li>
-            </ul>
-        </div>
+        <nav class="footer__nav">
+            <a href={href('servizi')} data-i18n="nav_servizi">Servizi</a>
+            <a href="lavori.html" data-i18n="nav_realizzati">Realizzati</a>
+            <a href="community.html" data-i18n="nav_community">Community</a>
+            <a href={href('chi-siamo')} data-i18n="nav_chi_siamo">Chi Siamo</a>
+            <a href={href('contatti')} data-i18n="footer_contatti">Contatti</a>
+        </nav>
     </div>
     <div class="footer__bottom container">
         <p data-i18n="footer_copy">&copy; 2026 TechMeOut. Tutti i diritti riservati.</p>
+        <div class="footer__legal">
+            <a href="privacy.html">Privacy Policy</a>
+            <span class="footer__legal-sep">·</span>
+            <a href="cookie.html">Cookie Policy</a>
+        </div>
     </div>
 </footer>

@@ -455,4 +455,43 @@ document.addEventListener('DOMContentLoaded', () => {
         return div.innerHTML;
     }
 
+    // ===== COOKIE CONSENT BANNER =====
+    (function initCookieBanner() {
+        if (localStorage.getItem('techmeout-cookie-consent')) return;
+
+        const banner = document.createElement('div');
+        banner.className = 'cookie-banner';
+        banner.innerHTML = `
+            <div class="cookie-banner__inner">
+                <div class="cookie-banner__text">
+                    <p>Questo sito utilizza cookie tecnici per garantirti la migliore esperienza di navigazione.
+                    Per saperne di più consulta la nostra <a href="cookie.html">Cookie Policy</a> e la <a href="privacy.html">Privacy Policy</a>.</p>
+                </div>
+                <div class="cookie-banner__actions">
+                    <button class="btn btn--primary cookie-banner__accept">Accetta</button>
+                    <button class="btn btn--ghost cookie-banner__reject">Rifiuta</button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(banner);
+
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                banner.classList.add('cookie-banner--visible');
+            });
+        });
+
+        banner.querySelector('.cookie-banner__accept').addEventListener('click', () => {
+            localStorage.setItem('techmeout-cookie-consent', 'accepted');
+            banner.classList.remove('cookie-banner--visible');
+            setTimeout(() => banner.remove(), 400);
+        });
+
+        banner.querySelector('.cookie-banner__reject').addEventListener('click', () => {
+            localStorage.setItem('techmeout-cookie-consent', 'rejected');
+            banner.classList.remove('cookie-banner--visible');
+            setTimeout(() => banner.remove(), 400);
+        });
+    })();
+
 });
