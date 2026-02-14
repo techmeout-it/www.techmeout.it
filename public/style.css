@@ -703,6 +703,33 @@ h1, h2, h3, h4 {
     background: rgba(0, 0, 0, 0.03);
 }
 
+/* Service card featured (community) */
+.service-card--featured {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(79, 143, 255, 0.08);
+    position: relative;
+}
+
+.service-card--featured::before {
+    content: '★ Il nostro cavallo di battaglia';
+    position: absolute;
+    top: -12px;
+    left: 24px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+[data-theme="light"] .service-card--featured {
+    border-color: var(--accent);
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.1);
+}
+
 /* === CHI SIAMO === */
 .about-grid {
     display: grid;
