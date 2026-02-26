@@ -1,0 +1,55 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+    title="ProteinLens — TechMeOut"
+    description="Progetto realizzato da TechMeOut: ProteinLens — AI Macro Nutrition Tracker, analisi nutrizionale con intelligenza artificiale."
+    keywords="proteinlens, AI, nutrizione, macro tracker, calorie, intelligenza artificiale, salute"
+    canonicalUrl="https://www.techmeout.it/lavori/proteinlens"
+    currentPage="lavori"
+>
+    <section class="page-hero">
+        <div class="container">
+            <a href="/lavori" class="btn btn--secondary" style="margin-bottom: 24px; font-size: 14px;">← Tutti i lavori</a>
+            <span class="section__tag">AI & Health</span>
+            <h1 class="page-hero__title">ProteinLens</h1>
+            <p class="page-hero__subtitle">
+                Tracker di macronutrienti alimentato dall'AI. Scatta una foto al tuo piatto e ottieni istantaneamente i valori nutrizionali.
+            </p>
+        </div>
+    </section>
+
+    <section class="section" style="padding-bottom: 0;">
+        <div class="container" style="max-width: 800px;">
+            <div class="card" style="padding: 0; overflow: hidden; border-radius: 12px;">
+                <img src="/screenshots/proteinlens.jpg" alt="Screenshot di ProteinLens" style="width: 100%; height: auto; display: block;" loading="lazy" />
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container" style="max-width: 800px;">
+            <div class="card" style="padding: 40px;">
+                <h2 style="margin-bottom: 16px;">Il progetto</h2>
+                <p style="margin-bottom: 24px; line-height: 1.8;">
+                    ProteinLens è un tracker di macronutrienti basato sull'intelligenza artificiale. 
+                    Basta scattare una foto al proprio piatto per ottenere istantaneamente i valori nutrizionali 
+                    — proteine, carboidrati, grassi e calorie. La tecnologia AI rende il tracking alimentare 
+                    semplice, veloce e accessibile a tutti.
+                </p>
+
+                <h3 style="margin-bottom: 12px;">Tecnologie utilizzate</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px;">
+                    <span class="project-card__tag">React</span>
+                    <span class="project-card__tag">TypeScript</span>
+                    <span class="project-card__tag">AI / Computer Vision</span>
+                    <span class="project-card__tag">Supabase</span>
+                    <span class="project-card__tag">Tailwind CSS</span>
+                </div>
+
+                <a href="https://www.proteinlens.com" target="_blank" rel="noopener noreferrer" class="btn btn--primary">Visita proteinlens.com →</a>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
