@@ -11,6 +11,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     ogDescription="Creiamo siti web moderni, performanti e su misura per far crescere il tuo business online."
     ogUrl="https://www.techmeout.it"
     currentPage="home"
+    jsonLd={{
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "name": "TechMeOut",
+                "url": "https://www.techmeout.it",
+                "description": "Studio di sviluppo web professionale. Creiamo siti web moderni, performanti e su misura.",
+                "publisher": { "@id": "https://www.techmeout.it/#organization" },
+                "inLanguage": "it-IT"
+            },
+            {
+                "@type": "Organization",
+                "@id": "https://www.techmeout.it/#organization",
+                "name": "TechMeOut",
+                "url": "https://www.techmeout.it",
+                "logo": "https://www.techmeout.it/favicon.svg",
+                "description": "Studio di sviluppo web professionale italiano",
+                "founder": {
+                    "@type": "Person",
+                    "name": "Luca Berton",
+                    "url": "https://lucaberton.com"
+                },
+                "sameAs": [
+                    "https://github.com/techmeout-it"
+                ]
+            },
+            {
+                "@type": "ProfessionalService",
+                "name": "TechMeOut",
+                "url": "https://www.techmeout.it",
+                "description": "Sviluppo web professionale — siti moderni, performanti e su misura",
+                "serviceType": ["Web Development", "Web Design", "SEO"],
+                "areaServed": { "@type": "Country", "name": "Italy" },
+                "availableLanguage": ["Italian", "English"]
+            }
+        ]
+    }}
 >
     <!-- Slot head: Twitter Card + JSON-LD (solo homepage) -->
     <Fragment slot="head">

@@ -1,4 +1,3 @@
-# TechMeOut Website
 User-agent: *
 Allow: /
 

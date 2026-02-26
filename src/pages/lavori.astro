@@ -3,14 +3,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-    title="I nostri lavori — TechMeOut"
-    description="I lavori di TechMeOut — Scopri i siti web che abbiamo progettato e sviluppato per i nostri clienti. Progetti reali, risultati concreti."
-    keywords="progetti web, siti realizzati, lavori sviluppo web, TechMeOut progetti, web design esempi"
+    title="I nostri lavori — TechMeOut | Portfolio Siti Web"
+    description="Scopri i siti web progettati e sviluppati da TechMeOut. Portfolio completo: Ansible Pilot, CopyPasteLearn, ProteinLens, Open Empower e altri progetti reali."
+    keywords="portfolio web, siti realizzati, progetti sviluppo web, TechMeOut lavori, web design portfolio, case study"
     canonicalUrl="https://www.techmeout.it/lavori"
     ogTitle="I nostri lavori — TechMeOut"
     ogDescription="Scopri i siti web che abbiamo progettato e sviluppato. Progetti reali, risultati concreti."
     ogUrl="https://www.techmeout.it/lavori"
     currentPage="lavori"
+    jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Portfolio — TechMeOut",
+        "description": "Progetti web realizzati da TechMeOut: siti moderni, performanti e su misura.",
+        "url": "https://www.techmeout.it/lavori",
+        "isPartOf": { "@type": "WebSite", "url": "https://www.techmeout.it" },
+        "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Ansible Pilot & Ansible by Example", "url": "https://www.techmeout.it/lavori/ansible-pilot" },
+                { "@type": "ListItem", "position": 2, "name": "CopyPasteLearn", "url": "https://www.techmeout.it/lavori/copypastelearn" },
+                { "@type": "ListItem", "position": 3, "name": "Luca Berton", "url": "https://www.techmeout.it/lavori/luca-berton" },
+                { "@type": "ListItem", "position": 4, "name": "Open Empower", "url": "https://www.techmeout.it/lavori/open-empower" },
+                { "@type": "ListItem", "position": 5, "name": "Terraform Pilot", "url": "https://www.techmeout.it/lavori/terraform-pilot" },
+                { "@type": "ListItem", "position": 6, "name": "ProteinLens", "url": "https://www.techmeout.it/lavori/proteinlens" },
+                { "@type": "ListItem", "position": 7, "name": "Tende da Tetto e Campeggio", "url": "https://www.techmeout.it/lavori/tende-da-tetto" },
+                { "@type": "ListItem", "position": 8, "name": "T4 Triveneto", "url": "https://www.techmeout.it/lavori/t4-triveneto" }
+            ]
+        }
+    }}
 >
     <!-- ===== PAGE HERO ===== -->
     <section class="page-hero">
@@ -33,7 +54,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="project-card__dots"><span></span><span></span><span></span></div>
                         <span class="project-card__url">ansiblepilot.com / ansiblebyexample.com</span>
                     </div>
-                    <div style="overflow: hidden;"><img src="/screenshots/ansiblepilot.jpg" alt="Ansible Pilot" style="width:100%;height:auto;display:block;" loading="lazy" /></div>
+                    <div style="overflow: hidden;"><img src="/screenshots/ansiblepilot.jpg" alt="Ansible Pilot" width="1280" height="800" style="width:100%;height:auto;display:block;" loading="lazy" /></div>
                     <div class="project-card__body">
                         <h3 class="project-card__title">Ansible Pilot & By Example</h3>
                         <p class="project-card__desc" data-i18n="proj_ansible_desc">Diventa un maestro dell'automazione con Ansible. Tutorial pratici, esempi reali e un percorso completo per portare le tue skill DevOps a livello professionale.</p>
@@ -50,7 +71,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="project-card__dots"><span></span><span></span><span></span></div>
                         <span class="project-card__url">copypastelearn.com</span>
                     </div>
-                    <div style="overflow: hidden;"><img src="/screenshots/copypastelearn.jpg" alt="CopyPasteLearn" style="width:100%;height:auto;display:block;" loading="lazy" /></div>
+                    <div style="overflow: hidden;"><img src="/screenshots/copypastelearn.jpg" alt="CopyPasteLearn" width="1280" height="800" style="width:100%;height:auto;display:block;" loading="lazy" /></div>
                     <div class="project-card__body">
                         <h3 class="project-card__title">Copy Paste Learn</h3>
                         <p class="project-card__desc" data-i18n="proj_cpl_desc">Tutorial pratici, strumenti reali, competenze subito spendibili. Impara Ansible, Terraform e Kubernetes con guide pensate per l'ambiente di produzione e accelera la tua crescita come Cloud Engineer.</p>
@@ -67,7 +88,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="project-card__dots"><span></span><span></span><span></span></div>
                         <span class="project-card__url">lucaberton.com / .it</span>
                     </div>
-                    <div style="overflow: hidden;"><img src="/screenshots/lucaberton.jpg" alt="Luca Berton" style="width:100%;height:auto;display:block;" loading="lazy" /></div>
+                    <div style="overflow: hidden;"><img src="/screenshots/lucaberton.jpg" alt="Luca Berton" width="1280" height="800" style="width:100%;height:auto;display:block;" loading="lazy" /></div>
                     <div class="project-card__body">
                         <h3 class="project-card__title">Luca Berton</h3>
                         <p class="project-card__desc" data-i18n="proj_lb_desc">AI, Kubernetes e Cloud automation per far crescere il tuo business. La competenza di un consulente esperto per trasformare la tua infrastruttura in modo rapido, moderno ed efficace.</p>
@@ -84,7 +105,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="project-card__dots"><span></span><span></span><span></span></div>
                         <span class="project-card__url">openempower.com</span>
                     </div>
-                    <div style="overflow: hidden;"><img src="/screenshots/openempower.jpg" alt="Open Empower" style="width:100%;height:auto;display:block;" loading="lazy" /></div>
+                    <div style="overflow: hidden;"><img src="/screenshots/openempower.jpg" alt="Open Empower" width="1280" height="800" style="width:100%;height:auto;display:block;" loading="lazy" /></div>
                     <div class="project-card__body">
                         <h3 class="project-card__title">Open Empower</h3>
                         <p class="project-card__desc" data-i18n="proj_oe_desc">Trasforma la tua infrastruttura con piattaforme AI-ready. Riduci i costi, accelera i rilasci e resta conforme, grazie a una consulenza indipendente e una soluzione di Platform Engineering pronta all'uso.</p>
@@ -101,7 +122,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="project-card__dots"><span></span><span></span><span></span></div>
                         <span class="project-card__url">terraformpilot.com</span>
                     </div>
-                    <div style="overflow: hidden;"><img src="/screenshots/terraformpilot.jpg" alt="Terraform Pilot" style="width:100%;height:auto;display:block;" loading="lazy" /></div>
+                    <div style="overflow: hidden;"><img src="/screenshots/terraformpilot.jpg" alt="Terraform Pilot" width="1280" height="800" style="width:100%;height:auto;display:block;" loading="lazy" /></div>
                     <div class="project-card__body">
                         <h3 class="project-card__title">Terraform Pilot</h3>
                         <p class="project-card__desc" data-i18n="proj_tf_desc">Automatizza meglio, ogni giorno. Scopri il metodo per imparare Terraform in modo rapido ed efficace, con un approccio DevOps creativo pensato per Cloud Engineer, SysAdmin e professionisti IT che vogliono fare un salto di qualità nell'automazione.</p>
@@ -118,7 +139,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="project-card__dots"><span></span><span></span><span></span></div>
                         <span class="project-card__url">proteinlens.com</span>
                     </div>
-                    <div style="overflow: hidden;"><img src="/screenshots/proteinlens.jpg" alt="ProteinLens" style="width:100%;height:auto;display:block;" loading="lazy" /></div>
+                    <div style="overflow: hidden;"><img src="/screenshots/proteinlens.jpg" alt="ProteinLens" width="1280" height="800" style="width:100%;height:auto;display:block;" loading="lazy" /></div>
                     <div class="project-card__body">
                         <h3 class="project-card__title">ProteinLens</h3>
                         <p class="project-card__desc" data-i18n="proj_pl_desc">Tracker di macronutrienti alimentato dall'AI. Scatta una foto al tuo piatto e ottieni istantaneamente i valori nutrizionali. Intelligenza artificiale al servizio della tua salute.</p>
@@ -135,7 +156,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="project-card__dots"><span></span><span></span><span></span></div>
                         <span class="project-card__url">tendedatettoecampeggio.it</span>
                     </div>
-                    <div style="overflow: hidden;"><img src="/screenshots/tendedatettoecampeggio.jpg" alt="Tende da Tetto e Campeggio" style="width:100%;height:auto;display:block;" loading="lazy" /></div>
+                    <div style="overflow: hidden;"><img src="/screenshots/tendedatettoecampeggio.jpg" alt="Tende da Tetto e Campeggio" width="1280" height="800" style="width:100%;height:auto;display:block;" loading="lazy" /></div>
                     <div class="project-card__body">
                         <h3 class="project-card__title">Tende da Tetto e Campeggio</h3>
                         <p class="project-card__desc" data-i18n="proj_tende_desc">La Community Italiana N°1 per le Tende da Tetto e Campeggio. Scopri i migliori campeggi, condividi le tue avventure e trova tutto quello che ti serve per viaggiare con la tua tenda da tetto.</p>
@@ -152,7 +173,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="project-card__dots"><span></span><span></span><span></span></div>
                         <span class="project-card__url">t4triveneto.com</span>
                     </div>
-                    <div style="overflow: hidden;"><img src="/screenshots/t4triveneto.jpg" alt="T4 Triveneto" style="width:100%;height:auto;display:block;" loading="lazy" /></div>
+                    <div style="overflow: hidden;"><img src="/screenshots/t4triveneto.jpg" alt="T4 Triveneto" width="1280" height="800" style="width:100%;height:auto;display:block;" loading="lazy" /></div>
                     <div class="project-card__body">
                         <h3 class="project-card__title">T4 Triveneto</h3>
                         <p class="project-card__desc" data-i18n="proj_t4_desc">Passione, amicizia e avventura su quattro ruote. Gruppo di appassionati del leggendario Volkswagen T4, il mitico furgone prodotto dal 1990 al 2003 che ha fatto la storia dei van e camperizzati.</p>
