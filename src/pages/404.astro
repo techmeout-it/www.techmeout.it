@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+    title="404 — Pagina non trovata | TechMeOut"
+    description="La pagina che stai cercando non esiste o è stata spostata."
+    currentPage="home"
+>
+    <section class="section" style="min-height: 60vh; display: flex; align-items: center; justify-content: center;">
+        <div class="container" style="text-align: center; max-width: 600px;">
+            <div style="font-size: 120px; font-weight: 800; line-height: 1; opacity: 0.1; margin-bottom: 16px;">404</div>
+            <h1 class="section__title" style="margin-bottom: 16px;">Pagina non trovata</h1>
+            <p class="section__desc" style="margin-bottom: 32px;">
+                La pagina che stai cercando non esiste, è stata spostata o rimossa.<br>
+                Nessun problema — ti riportiamo sulla strada giusta.
+            </p>
+            <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                <a href="/" class="btn btn--primary">Torna alla Home</a>
+                <a href="/lavori" class="btn btn--secondary">I nostri lavori</a>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
