@@ -1,8 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-    site: 'https://techmeout-it.github.io',
-    base: '/www.techmeout.it',
+    site: 'https://www.techmeout.it',
     output: 'static',
     outDir: './dist',
     build: {
