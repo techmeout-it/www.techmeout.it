@@ -1,0 +1,371 @@
+/* ========================================
+   TechMeOut — WOW Enhancements
+   Animations, glassmorphism, micro-interactions
+   ======================================== */
+
+/* === SCROLL PROGRESS BAR === */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: var(--accent-gradient);
+    z-index: 10001;
+    width: 0%;
+    transition: none;
+    box-shadow: 0 0 10px rgba(79, 143, 255, 0.5);
+}
+
+[data-theme="light"] .scroll-progress {
+    box-shadow: 0 0 10px rgba(37, 99, 235, 0.4);
+}
+
+/* === ANIMATED GRADIENT TEXT === */
+.text-gradient {
+    background: linear-gradient(135deg, #4f8fff, #a78bfa, #f472b6, #4f8fff);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 6s ease infinite;
+}
+
+@keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* === HERO ENHANCEMENTS === */
+.hero__bg-grid {
+    animation: grid-pulse 8s ease-in-out infinite;
+}
+
+@keyframes grid-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* Floating particles behind hero */
+.hero__particles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.hero__particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    opacity: 0;
+    animation: particle-float linear infinite;
+}
+
+@keyframes particle-float {
+    0% {
+        opacity: 0;
+        transform: translateY(100vh) scale(0);
+    }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.3; }
+    100% {
+        opacity: 0;
+        transform: translateY(-20vh) scale(1);
+    }
+}
+
+/* Hero title entrance */
+.hero__title {
+    animation: hero-title-in 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+
+.hero__tag {
+    animation: hero-tag-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0s both;
+}
+
+.hero__subtitle {
+    animation: hero-subtitle-in 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+
+@keyframes hero-tag-in {
+    from { opacity: 0; transform: translateY(20px); filter: blur(4px); }
+    to { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+@keyframes hero-title-in {
+    from { opacity: 0; transform: translateY(30px) scale(0.97); filter: blur(6px); }
+    to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+@keyframes hero-subtitle-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === GLASSMORPHISM SERVICE CARDS === */
+.service-card {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(22, 22, 22, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-theme="light"] .service-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.service-card:hover {
+    background: rgba(28, 28, 28, 0.8);
+    border-color: rgba(79, 143, 255, 0.2);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(79, 143, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transform: translateY(-8px);
+}
+
+[data-theme="light"] .service-card:hover {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(37, 99, 235, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* === 3D TILT ON CARDS === */
+.service-card,
+.process-step,
+.project-card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+/* === GLOWING CTA BUTTONS === */
+.btn--primary {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn--primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+}
+
+.btn--primary:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn--primary:hover {
+    box-shadow:
+        0 0 20px rgba(79, 143, 255, 0.4),
+        0 0 60px rgba(79, 143, 255, 0.15),
+        0 8px 30px rgba(79, 143, 255, 0.25);
+    transform: translateY(-3px);
+}
+
+.nav__link--cta {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav__link--cta::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-gradient);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav__link--cta:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* === CODE WINDOW TYPING ANIMATION === */
+.code-window__content code {
+    overflow: hidden;
+}
+
+.code-typing-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.1em;
+    background: var(--accent-color);
+    margin-left: 2px;
+    animation: cursor-blink 1s step-end infinite;
+    vertical-align: text-bottom;
+}
+
+@keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* === PROCESS STEP NUMBER GLOW === */
+.process-step:hover .process-step__number {
+    color: rgba(79, 143, 255, 0.25);
+    text-shadow: 0 0 40px rgba(79, 143, 255, 0.15);
+    transition: all 0.5s ease;
+}
+
+/* === ICON PULSE ON HOVER === */
+.service-card:hover .service-card__icon {
+    animation: icon-pulse 0.6s ease;
+    border-color: rgba(79, 143, 255, 0.3);
+    box-shadow: 0 0 20px rgba(79, 143, 255, 0.15);
+}
+
+@keyframes icon-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+/* === SMOOTH REVEAL ENHANCEMENTS === */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    filter: blur(4px);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+/* === NEON DIVIDER PULSE === */
+.neon-divider__line {
+    animation: neon-pulse 3s ease-in-out infinite;
+}
+
+@keyframes neon-pulse {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(57, 255, 133, 0.4), 0 0 30px rgba(57, 255, 133, 0.15);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(57, 255, 133, 0.6), 0 0 60px rgba(57, 255, 133, 0.25);
+    }
+}
+
+/* === MAGNETIC CURSOR EFFECT ON NAV LINKS === */
+.nav__link {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* === FORM INPUT FOCUS GLOW === */
+.form-input:focus {
+    box-shadow:
+        0 0 0 3px rgba(79, 143, 255, 0.1),
+        0 0 20px rgba(79, 143, 255, 0.08);
+    border-color: rgba(79, 143, 255, 0.5);
+}
+
+/* === FOOTER LOGO GLOW === */
+.footer .nav__logo:hover .logo-bracket {
+    text-shadow: 0 0 12px var(--accent-color);
+}
+
+/* === SMOOTH TAG ENTRANCE === */
+.section__tag {
+    transition: all 0.3s ease;
+}
+
+.section__tag:hover {
+    background: var(--accent-color-soft);
+    border-color: var(--accent-color);
+    transform: translateY(-1px);
+}
+
+/* === SERVICE CARD SHINE EFFECT === */
+.service-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 40%,
+        rgba(255, 255, 255, 0.03) 45%,
+        rgba(255, 255, 255, 0.05) 50%,
+        rgba(255, 255, 255, 0.03) 55%,
+        transparent 60%
+    );
+    transform: translateX(-100%) translateY(-100%) rotate(0deg);
+    transition: none;
+    pointer-events: none;
+}
+
+.service-card:hover::after {
+    animation: card-shine 0.8s ease forwards;
+}
+
+@keyframes card-shine {
+    to {
+        transform: translateX(50%) translateY(50%) rotate(0deg);
+    }
+}
+
+/* === HEADER BLUR ENHANCE ON SCROLL === */
+.header.scrolled {
+    backdrop-filter: blur(24px) saturate(1.2);
+    -webkit-backdrop-filter: blur(24px) saturate(1.2);
+}
+
+/* === CONTACT FORM CARD GLASS === */
+.contact__form {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: rgba(22, 22, 22, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="light"] .contact__form {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* === REDUCED MOTION === */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    .scroll-progress { display: none; }
+    .hero__particles { display: none; }
+    .reveal { filter: none; opacity: 1; transform: none; }
+}
+
+/* === LUCA BERTON NETWORK FOOTER === */
+.lb-network{background:#0f172a;border-top:2px solid #3b82f6;padding:24px 16px;text-align:center;font-family:system-ui,-apple-system,sans-serif}
+.lb-network p{color:#94a3b8;font-size:13px;margin:0 0 14px;letter-spacing:.5px;text-transform:uppercase;font-weight:600}
+.lb-network-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:720px;margin:0 auto}
+.lb-network a{display:inline-flex;align-items:center;gap:6px;background:#1e293b;color:#e2e8f0;text-decoration:none;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:500;transition:all .2s;border:1px solid #334155}
+.lb-network a:hover{background:#3b82f6;border-color:#3b82f6;color:#fff;transform:translateY(-1px);box-shadow:0 4px 12px rgba(59,130,246,.3)}
+.lb-network a svg{width:18px;height:18px;flex-shrink:0}
+.lb-network a.lb-active{border-color:#3b82f6;background:#1e3a5f}
