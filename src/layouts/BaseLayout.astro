@@ -23,6 +23,8 @@ const {
     ogUrl = canonicalUrl,
     currentPage = 'home',
 } = Astro.props;
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
 <!DOCTYPE html>
@@ -47,12 +49,12 @@ const {
     <title>{title}</title>
 
     <link rel="canonical" href={canonicalUrl}>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`}>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/wow.css">
+    <link rel="stylesheet" href={`${base}/style.css`}>
+    <link rel="stylesheet" href={`${base}/wow.css`}>
     <script is:inline>if(localStorage.getItem('techmeout-theme')==='light')document.documentElement.setAttribute('data-theme','light');</script>
 
     <!-- Microsoft Clarity -->
@@ -76,7 +78,14 @@ const {
 
     <Footer currentPage={currentPage} />
 
-    <script src="/script.js" is:inline defer></script>
-    <script src="/wow.js" is:inline defer></script>
+    <script is:inline define:vars={{ base }}>
+        // Load scripts dynamically with correct base path
+        ['script.js', 'wow.js'].forEach(f => {
+            const s = document.createElement('script');
+            s.src = base + '/' + f;
+            s.defer = true;
+            document.body.appendChild(s);
+        });
+    </script>
 </body>
 </html>

@@ -6,12 +6,17 @@ export interface Props {
 const { currentPage = 'home' } = Astro.props;
 
 const isHome = currentPage === 'home';
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 function href(anchor: string): string {
-    return isHome ? `#${anchor}` : `index.html#${anchor}`;
+    return isHome ? `#${anchor}` : `${base}/index.html#${anchor}`;
 }
 
-const logoHref = isHome ? '#hero' : 'index.html';
+function page(file: string): string {
+    return `${base}/${file}`;
+}
+
+const logoHref = isHome ? '#hero' : `${base}/index.html`;
 ---
 
 <div class="neon-divider"><div class="neon-divider__line"></div></div>
@@ -26,8 +31,8 @@ const logoHref = isHome ? '#hero' : 'index.html';
         </div>
         <nav class="footer__nav">
             <a href={href('servizi')} data-i18n="nav_servizi">Servizi</a>
-            <a href="lavori.html" data-i18n="nav_realizzati">Realizzati</a>
-            <a href="community.html" data-i18n="nav_community">Community</a>
+            <a href={page('lavori.html')} data-i18n="nav_realizzati">Realizzati</a>
+            <a href={page('community.html')} data-i18n="nav_community">Community</a>
             <a href={href('chi-siamo')} data-i18n="nav_chi_siamo">Chi Siamo</a>
             <a href={href('contatti')} data-i18n="footer_contatti">Contatti</a>
         </nav>
@@ -35,9 +40,9 @@ const logoHref = isHome ? '#hero' : 'index.html';
     <div class="footer__bottom container">
         <p data-i18n="footer_copy">&copy; 2026 TechMeOut. Tutti i diritti riservati.</p>
         <div class="footer__legal">
-            <a href="privacy.html">Privacy Policy</a>
+            <a href={page('privacy.html')}>Privacy Policy</a>
             <span class="footer__legal-sep">·</span>
-            <a href="cookie.html">Cookie Policy</a>
+            <a href={page('cookie.html')}>Cookie Policy</a>
         </div>
     </div>
 </footer>
