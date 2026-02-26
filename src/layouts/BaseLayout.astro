@@ -78,14 +78,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
     <Footer currentPage={currentPage} />
 
-    <script is:inline define:vars={{ base }}>
-        // Load scripts dynamically with correct base path
-        ['script.js', 'wow.js'].forEach(f => {
-            const s = document.createElement('script');
-            s.src = base + '/' + f;
-            s.defer = true;
-            document.body.appendChild(s);
-        });
-    </script>
+    <script is:inline src={`${base}/script.js`} defer></script>
+    <script is:inline src={`${base}/wow.js`} defer></script>
 </body>
 </html>
