@@ -11,6 +11,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     ogDescription="Aiutiamo le comunità digitali con siti web, gestione eventi e strumenti tecnologici per la buona riuscita dei raduni."
     ogUrl="https://www.techmeout.it/community"
     currentPage="community"
+    jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Supporto alle Community — TechMeOut",
+        "description": "Aiutiamo le comunità digitali con siti web, gestione eventi e strumenti tecnologici per raduni e incontri.",
+        "url": "https://www.techmeout.it/community",
+        "isPartOf": { "@type": "WebSite", "url": "https://www.techmeout.it" },
+        "about": [
+            {
+                "@type": "Organization",
+                "name": "Tende da Tetto e Campeggio",
+                "url": "https://www.tendedatettoecampeggio.it",
+                "description": "La Community Italiana N°1 per le Tende da Tetto e Campeggio"
+            },
+            {
+                "@type": "Organization",
+                "name": "T4 Triveneto",
+                "url": "https://t4triveneto.com",
+                "description": "Community di appassionati del Volkswagen T4"
+            }
+        ]
+    }}
 >
     <!-- ===== PAGE HERO ===== -->
     <section class="page-hero">
@@ -166,7 +188,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="case-study__preview">
                             <div class="case-study__preview-content">
                                 <div class="preview-icon">
-                                    <img src="/logo-tende.jpg" alt="Logo Tende da Tetto e Campeggio" style="width: 100%; max-width: 220px; border-radius: 12px; display: block; margin: 0 auto;">
+                                    <img src="/logo-tende.jpg" alt="Logo Tende da Tetto e Campeggio — Community italiana per gli appassionati di tende da tetto e campeggio" width="220" height="220" style="width: 100%; max-width: 220px; border-radius: 12px; display: block; margin: 0 auto;" loading="lazy">
                                 </div>
                                 <h4>Tende da Tetto e Campeggio</h4>
                                 <p>La Community Italiana N&deg;1</p>
@@ -231,7 +253,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         <div class="case-study__preview">
                             <div class="case-study__preview-content">
                                 <div class="preview-icon">
-                                    <img src="/logo-t4.png" alt="Logo T4 Triveneto" style="width: 100%; max-width: 220px; border-radius: 12px; display: block; margin: 0 auto;">
+                                    <img src="/logo-t4.png" alt="Logo T4 Triveneto — Community di appassionati del Volkswagen T4" width="220" height="220" style="width: 100%; max-width: 220px; border-radius: 12px; display: block; margin: 0 auto;" loading="lazy">
                                 </div>
                                 <h4>T4 Triveneto</h4>
                                 <p>Passione VW T4</p>
