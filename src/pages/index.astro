@@ -27,12 +27,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 "@id": "https://www.techmeout.it/#organization",
                 "name": "TechMeOut",
                 "url": "https://www.techmeout.it",
-                "logo": "https://www.techmeout.it/favicon.svg",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://www.techmeout.it/favicon.svg"
+                },
                 "description": "Studio di sviluppo web professionale italiano",
                 "founder": {
                     "@type": "Person",
                     "name": "Luca Berton",
                     "url": "https://lucaberton.com"
+                },
+                "parentOrganization": {
+                    "@type": "Organization",
+                    "name": "Open Empower BV",
+                    "url": "https://www.openempower.com",
+                    "identifier": "KvK: 94970963"
                 },
                 "sameAs": [
                     "https://github.com/techmeout-it"
@@ -50,31 +59,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         ]
     }}
 >
-    <!-- Slot head: Twitter Card + JSON-LD (solo homepage) -->
-    <Fragment slot="head">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="TechMeOut — Sviluppo Web Professionale">
-        <meta name="twitter:description" content="Creiamo siti web moderni, performanti e su misura per far crescere il tuo business online.">
-
-        <script type="application/ld+json" set:html={JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ProfessionalService",
-            "name": "TechMeOut",
-            "description": "Studio di sviluppo web professionale. Creiamo siti web moderni, performanti e su misura.",
-            "url": "https://www.techmeout.it",
-            "logo": "https://www.techmeout.it/favicon.svg",
-            "sameAs": [],
-            "address": {
-                "@type": "PostalAddress",
-                "addressCountry": "IT"
-            },
-            "serviceType": ["Sviluppo Web", "Web Design", "SEO", "Consulenza Digitale"],
-            "areaServed": {
-                "@type": "Country",
-                "name": "Italia"
-            }
-        })} />
-    </Fragment>
 
     <!-- ===== HERO ===== -->
     <section class="hero" id="hero">
