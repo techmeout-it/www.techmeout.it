@@ -9,14 +9,14 @@ const isHome = currentPage === 'home';
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 function href(anchor: string): string {
-    return isHome ? `#${anchor}` : `${base}/index.html#${anchor}`;
+    return isHome ? `#${anchor}` : `/#${anchor}`;
 }
 
 function page(file: string): string {
     return `${base}/${file}`;
 }
 
-const logoHref = isHome ? '#hero' : `${base}/index.html`;
+const logoHref = isHome ? '#hero' : '/';
 ---
 
 <div class="neon-divider"><div class="neon-divider__line"></div></div>
