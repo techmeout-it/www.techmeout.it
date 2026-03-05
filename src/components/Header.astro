@@ -33,8 +33,8 @@ const logoHref = isHome ? '#hero' : `${base}/index.html`;
 
         <ul class="nav__menu" id="navMenu" role="menubar">
             <li role="none"><a href={href('servizi')} class="nav__link" role="menuitem" data-i18n="nav_servizi">Servizi</a></li>
-            <li role="none"><a href={page('lavori.html')} class:list={['nav__link', { 'nav__link--active': currentPage === 'lavori' }]} role="menuitem" data-i18n="nav_realizzati">Realizzati</a></li>
-            <li role="none"><a href={page('community.html')} class:list={['nav__link', { 'nav__link--active': currentPage === 'community' }]} role="menuitem" data-i18n="nav_community">Le Community</a></li>
+            <li role="none"><a href={page('lavori/')} class:list={['nav__link', { 'nav__link--active': currentPage === 'lavori' }]} role="menuitem" data-i18n="nav_realizzati">Realizzati</a></li>
+            <li role="none"><a href={page('community/')} class:list={['nav__link', { 'nav__link--active': currentPage === 'community' }]} role="menuitem" data-i18n="nav_community">Le Community</a></li>
             <li role="none"><a href={href('chi-siamo')} class="nav__link" role="menuitem" data-i18n="nav_chi_siamo">Chi Siamo</a></li>
             <li role="none"><a href={href('processo')} class="nav__link" role="menuitem" data-i18n="nav_processo">Processo</a></li>
             <li role="none"><a href={href('contatti')} class="nav__link nav__link--cta" role="menuitem" data-i18n="nav_contattaci">Contattaci</a></li>

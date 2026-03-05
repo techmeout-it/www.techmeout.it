@@ -6,6 +6,6 @@ export default defineConfig({
     outDir: './dist',
     build: {
         assets: 'assets',
-        format: 'file'
+        format: 'directory'
     }
 });
