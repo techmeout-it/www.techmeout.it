@@ -1,0 +1,27 @@
+{
+  "name": "TechMeOut — Sviluppo Web Professionale",
+  "short_name": "TechMeOut",
+  "description": "Studio di sviluppo web professionale. Creiamo siti web moderni, performanti e su misura.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d1520",
+  "theme_color": "#0d1520",
+  "lang": "it",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "16x16 32x32"
+    }
+  ]
+}
