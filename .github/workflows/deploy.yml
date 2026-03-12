@@ -41,3 +41,24 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+  indexnow:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Submit IndexNow
+        run: |
+          URLS=$(grep -oP '(?<=<loc>)[^<]+' public/sitemap.xml)
+          URL_JSON=$(echo "$URLS" | jq -R -s 'split("\n") | map(select(length > 0))')
+          curl -s -X POST "https://api.indexnow.org/IndexNow" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"host\": \"www.techmeout.it\",
+              \"key\": \"ee35bd410c8940c1a29f23f1c772c599\",
+              \"keyLocation\": \"https://www.techmeout.it/ee35bd410c8940c1a29f23f1c772c599.txt\",
+              \"urlList\": $URL_JSON
+            }"
+          echo ""
+          echo "✅ Submitted $(echo "$URLS" | wc -l) URLs to IndexNow"
