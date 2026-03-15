@@ -1,0 +1,376 @@
+/* ====================================================================
+   UI/UX Pro Max Enhancements
+   Based on: github.com/nextlevelbuilder/ui-ux-pro-max-skill
+   Applied to TechMeOut.it — web development studio
+   
+   Principles:
+   - cursor-pointer on ALL clickable elements
+   - Smooth transitions (150-300ms) on all interactive states
+   - Focus states visible for keyboard navigation
+   - WCAG AA contrast minimum (4.5:1)
+   - prefers-reduced-motion respected
+   - Responsive: 375px, 768px, 1024px, 1440px
+   - No emojis as icons
+   ==================================================================== */
+
+/* ─── 1. CURSOR-POINTER ON ALL CLICKABLES ─── */
+a,
+button,
+[role="button"],
+[type="submit"],
+[type="button"],
+.btn,
+.btn--primary,
+.btn--secondary,
+.btn--full,
+.card,
+.portfolio__card,
+.nav__link,
+.nav__logo,
+.lang-btn,
+.theme-toggle,
+.mobile-toggle,
+summary,
+label[for],
+input[type="checkbox"],
+input[type="radio"],
+select {
+    cursor: pointer;
+}
+
+/* ─── 2. SMOOTH TRANSITIONS ON ALL INTERACTIVE ELEMENTS ─── */
+a,
+button,
+.btn,
+.card,
+.portfolio__card,
+.nav__link,
+.nav__logo,
+input,
+textarea,
+select {
+    transition: all var(--transition-fast, 0.2s cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+/* ─── 3. FOCUS STATES — Keyboard Navigation ─── */
+:focus-visible {
+    outline: 2px solid var(--accent-color, #4f8fff);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm, 6px);
+}
+
+/* Remove outline on mouse click, keep for keyboard */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Enhanced focus for buttons */
+.btn:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent-color, #4f8fff);
+    outline-offset: 3px;
+    box-shadow: 0 0 0 4px var(--accent-color-soft, rgba(79, 143, 255, 0.15));
+}
+
+/* Enhanced focus for nav links */
+.nav__link:focus-visible {
+    outline: 2px solid var(--accent-color, #4f8fff);
+    outline-offset: 4px;
+    border-radius: var(--radius-sm, 6px);
+}
+
+/* Focus for form inputs */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: none;
+    border-color: var(--accent-color, #4f8fff);
+    box-shadow: 0 0 0 3px var(--accent-color-soft, rgba(79, 143, 255, 0.15));
+}
+
+/* ─── 4. ENHANCED HOVER STATES ─── */
+
+/* Cards — soft lift */
+.card:hover,
+.portfolio__card:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 12px 40px rgba(0, 0, 0, 0.15),
+        0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons — subtle scale + shadow */
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 16px var(--accent-color-glow, rgba(79, 143, 255, 0.08));
+}
+
+.btn:active {
+    transform: translateY(0) scale(0.98);
+    transition-duration: 0.1s;
+}
+
+/* Nav links — underline slide-in */
+.nav__link {
+    position: relative;
+}
+
+.nav__link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gradient, var(--accent-color));
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 1px;
+}
+
+.nav__link:hover::after,
+.nav__link.active::after {
+    width: 100%;
+}
+
+/* ─── 5. SCROLL BEHAVIOR ─── */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Account for fixed nav */
+}
+
+/* ─── 6. SELECTION STYLING ─── */
+::selection {
+    background: var(--accent-color-soft, rgba(79, 143, 255, 0.25));
+    color: var(--text-primary, #f0f0f0);
+}
+
+/* ─── 7. BETTER TEXT RENDERING ─── */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* ─── 8. IMAGE OPTIMIZATION ─── */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Smooth image loading */
+img[loading="lazy"] {
+    opacity: 0;
+    animation: fadeInImage 0.4s ease forwards;
+}
+
+@keyframes fadeInImage {
+    to { opacity: 1; }
+}
+
+/* ─── 9. 1440px BREAKPOINT (Large Screens) ─── */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .hero__title {
+        font-size: clamp(3rem, 4vw, 4.5rem);
+    }
+    
+    .section {
+        padding: 80px 0;
+    }
+    
+    .portfolio__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+    }
+}
+
+/* ─── 10. 375px BREAKPOINT (Small Phones) ─── */
+@media (max-width: 375px) {
+    :root {
+        --container-padding: 0 16px;
+    }
+    
+    .hero__title {
+        font-size: 1.75rem;
+    }
+    
+    .hero__subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ─── 11. LIGHT MODE CONTRAST FIXES (WCAG AA: 4.5:1) ─── */
+[data-theme="light"] {
+    --text-primary: #111827;      /* 15.4:1 on #f8f9fa — AAA */
+    --text-secondary: #374151;    /* 9.7:1 on #ffffff — AAA */
+    --text-muted: #6b7280;        /* 5.0:1 on #ffffff — AA */
+}
+
+/* Ensure link contrast in light mode */
+[data-theme="light"] a:not(.btn) {
+    color: #1d4ed8; /* 7.0:1 on white — AAA */
+}
+
+[data-theme="light"] a:not(.btn):hover {
+    color: #1e40af;
+}
+
+/* ─── 12. MICRO-INTERACTIONS ─── */
+
+/* Logo pulse on hover */
+.nav__logo:hover {
+    opacity: 0.85;
+    transition: opacity 0.2s ease;
+}
+
+/* Form input float label feel */
+input::placeholder,
+textarea::placeholder {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+    opacity: 0.5;
+    transform: translateX(4px);
+}
+
+/* ─── 13. SKIP TO CONTENT (Accessibility) ─── */
+.skip-to-content {
+    position: absolute;
+    top: -100%;
+    left: 16px;
+    z-index: 10000;
+    padding: 12px 24px;
+    background: var(--accent-color, #4f8fff);
+    color: #fff;
+    border-radius: var(--radius-md, 10px);
+    font-weight: 600;
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+
+.skip-to-content:focus {
+    top: 16px;
+}
+
+/* ─── 14. SMOOTH PAGE TRANSITIONS ─── */
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    animation: pageEnter 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* ─── 15. SCROLLBAR STYLING ─── */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-primary, #0a0a0a);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-accent, rgba(255, 255, 255, 0.15));
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted, #808080);
+}
+
+[data-theme="light"]::-webkit-scrollbar-track {
+    background: var(--bg-primary, #f8f9fa);
+}
+
+[data-theme="light"]::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"]::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* Firefox scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-accent, rgba(255, 255, 255, 0.15)) var(--bg-primary, #0a0a0a);
+}
+
+/* ─── 16. PREFERS-REDUCED-MOTION ─── */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    main {
+        animation: none;
+    }
+    
+    .card:hover,
+    .portfolio__card:hover {
+        transform: none;
+    }
+    
+    .btn:hover,
+    .btn:active {
+        transform: none;
+    }
+    
+    img[loading="lazy"] {
+        opacity: 1;
+        animation: none;
+    }
+}
+
+/* ─── 17. PRINT STYLES ─── */
+@media print {
+    nav,
+    footer,
+    .scroll-progress,
+    .particles-container,
+    .skip-to-content {
+        display: none !important;
+    }
+    
+    body {
+        background: #fff !important;
+        color: #000 !important;
+    }
+    
+    a {
+        color: #000 !important;
+        text-decoration: underline !important;
+    }
+    
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+}
