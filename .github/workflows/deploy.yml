@@ -50,15 +50,23 @@ jobs:
 
       - name: Submit IndexNow
         run: |
-          URLS=$(grep -oP '(?<=<loc>)[^<]+' public/sitemap.xml)
-          URL_JSON=$(echo "$URLS" | jq -R -s 'split("\n") | map(select(length > 0))')
-          curl -s -X POST "https://api.indexnow.org/IndexNow" \
+          echo "📡 Fetching IndexNow payload from /api/indexnow.json..."
+          PAYLOAD=$(curl -sf "https://www.techmeout.it/api/indexnow.json")
+          if [ -z "$PAYLOAD" ]; then
+            echo "⚠️ API not yet available, using sitemap fallback"
+            URLS=$(grep -oP '(?<=<loc>)[^<]+' public/sitemap.xml)
+            URL_JSON=$(echo "$URLS" | jq -R -s 'split("\n") | map(select(length > 0))')
+            PAYLOAD=$(jq -n \
+              --arg host "www.techmeout.it" \
+              --arg key "ee35bd410c8940c1a29f23f1c772c599" \
+              --arg keyLoc "https://www.techmeout.it/ee35bd410c8940c1a29f23f1c772c599.txt" \
+              --argjson urls "$URL_JSON" \
+              '{host: $host, key: $key, keyLocation: $keyLoc, urlList: $urls}')
+          fi
+          echo "$PAYLOAD" | jq .
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST "https://api.indexnow.org/IndexNow" \
             -H "Content-Type: application/json" \
-            -d "{
-              \"host\": \"www.techmeout.it\",
-              \"key\": \"ee35bd410c8940c1a29f23f1c772c599\",
-              \"keyLocation\": \"https://www.techmeout.it/ee35bd410c8940c1a29f23f1c772c599.txt\",
-              \"urlList\": $URL_JSON
-            }"
-          echo ""
-          echo "✅ Submitted $(echo "$URLS" | wc -l) URLs to IndexNow"
+            -d "$PAYLOAD")
+          HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+          echo "✅ IndexNow response: HTTP $HTTP_CODE"
+          echo "📊 Submitted $(echo "$PAYLOAD" | jq '.urlList | length') URLs"
