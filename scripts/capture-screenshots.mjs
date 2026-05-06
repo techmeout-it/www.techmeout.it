@@ -44,3 +44,6 @@ for (const { url, file } of sites) {
 }
 
 await browser.close();
+
+// Generate responsive variants for all captured screenshots.
+await import('./generate-responsive.mjs');

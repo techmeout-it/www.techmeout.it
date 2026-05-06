@@ -24,6 +24,7 @@
     "astro": "^5.17.2"
   },
   "devDependencies": {
-    "playwright": "^1.59.1"
+    "playwright": "^1.59.1",
+    "sharp": "^0.34.5"
   }
 }
