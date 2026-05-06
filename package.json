@@ -22,5 +22,8 @@
   "homepage": "https://github.com/OttoVonRasta/techmeout#readme",
   "dependencies": {
     "astro": "^5.17.2"
+  },
+  "devDependencies": {
+    "playwright": "^1.59.1"
   }
 }

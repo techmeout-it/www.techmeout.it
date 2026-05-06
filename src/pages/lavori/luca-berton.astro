@@ -8,6 +8,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     keywords="luca berton, consulenza IT, AI, kubernetes, cloud automation"
     canonicalUrl="https://www.techmeout.it/lavori/luca-berton/"
     currentPage="lavori"
+    jsonLd={{
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CreativeWork",
+                "name": "Luca Berton",
+                "description": "Sito personale di Luca Berton, consulente AI, Kubernetes e Cloud automation. Progetto realizzato da TechMeOut.",
+                "url": "https://www.techmeout.it/lavori/luca-berton/",
+                "creator": { "@id": "https://www.techmeout.it/#organization" },
+                "about": ["AI", "Kubernetes", "Cloud automation", "Consulenza IT"],
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.techmeout.it/" },
+                    { "@type": "ListItem", "position": 2, "name": "Lavori", "item": "https://www.techmeout.it/lavori/" },
+                    { "@type": "ListItem", "position": 3, "name": "Luca Berton", "item": "https://www.techmeout.it/lavori/luca-berton/" }
+                ]
+            }
+        ]
+    }}
 >
     <section class="page-hero">
         <div class="container">

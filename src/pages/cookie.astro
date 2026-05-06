@@ -11,6 +11,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     ogDescription="Informativa sull'utilizzo dei cookie sul sito TechMeOut ai sensi del Regolamento UE 2016/679."
     ogUrl="https://www.techmeout.it/cookie/"
     currentPage="lavori"
+    jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Cookie Policy — TechMeOut",
+        "description": "Informativa sull'utilizzo dei cookie sul sito TechMeOut ai sensi del Regolamento UE 2016/679.",
+        "url": "https://www.techmeout.it/cookie/",
+        "isPartOf": { "@id": "https://www.techmeout.it/#website" },
+        "about": { "@id": "https://www.techmeout.it/#organization" },
+        "inLanguage": "it-IT"
+    }}
 >
     <section class="page-hero page-hero--compact">
         <div class="container">

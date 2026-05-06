@@ -4,8 +4,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout
     title="404 — Pagina non trovata | TechMeOut"
-    description="La pagina che stai cercando non esiste o è stata spostata."
+    description="La pagina che stai cercando non esiste o è stata spostata. Torna alla home di TechMeOut o esplora il nostro portfolio di siti web realizzati."
     currentPage="home"
+    jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "404 — Pagina non trovata",
+        "description": "La pagina che stai cercando non esiste o è stata spostata.",
+        "url": "https://www.techmeout.it/404",
+        "isPartOf": { "@id": "https://www.techmeout.it/#website" },
+        "inLanguage": "it-IT"
+    }}
 >
     <section class="section" style="min-height: 60vh; display: flex; align-items: center; justify-content: center;">
         <div class="container" style="text-align: center; max-width: 600px;">

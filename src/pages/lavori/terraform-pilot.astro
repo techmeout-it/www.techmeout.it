@@ -8,6 +8,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     keywords="terraform pilot, terraform, devops, cloud, automazione, infrastructure as code"
     canonicalUrl="https://www.techmeout.it/lavori/terraform-pilot/"
     currentPage="lavori"
+    jsonLd={{
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CreativeWork",
+                "name": "Terraform Pilot",
+                "description": "Impara Terraform con un approccio DevOps creativo. Tutorial e best practice per Cloud Engineer. Progetto realizzato da TechMeOut.",
+                "url": "https://www.techmeout.it/lavori/terraform-pilot/",
+                "creator": { "@id": "https://www.techmeout.it/#organization" },
+                "about": ["Terraform", "DevOps", "Cloud", "Infrastructure as Code"],
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.techmeout.it/" },
+                    { "@type": "ListItem", "position": 2, "name": "Lavori", "item": "https://www.techmeout.it/lavori/" },
+                    { "@type": "ListItem", "position": 3, "name": "Terraform Pilot", "item": "https://www.techmeout.it/lavori/terraform-pilot/" }
+                ]
+            }
+        ]
+    }}
 >
     <section class="page-hero">
         <div class="container">

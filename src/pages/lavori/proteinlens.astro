@@ -8,6 +8,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     keywords="proteinlens, AI, nutrizione, macro tracker, calorie, intelligenza artificiale, salute"
     canonicalUrl="https://www.techmeout.it/lavori/proteinlens/"
     currentPage="lavori"
+    jsonLd={{
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CreativeWork",
+                "name": "ProteinLens",
+                "description": "AI Macro Nutrition Tracker — analisi nutrizionale con intelligenza artificiale. Progetto realizzato da TechMeOut.",
+                "url": "https://www.techmeout.it/lavori/proteinlens/",
+                "creator": { "@id": "https://www.techmeout.it/#organization" },
+                "about": ["AI", "Nutrizione", "Macro tracker", "Salute"],
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.techmeout.it/" },
+                    { "@type": "ListItem", "position": 2, "name": "Lavori", "item": "https://www.techmeout.it/lavori/" },
+                    { "@type": "ListItem", "position": 3, "name": "ProteinLens", "item": "https://www.techmeout.it/lavori/proteinlens/" }
+                ]
+            }
+        ]
+    }}
 >
     <section class="page-hero">
         <div class="container">

@@ -8,6 +8,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     keywords="open empower, platform engineering, AI, consulenza, cloud"
     canonicalUrl="https://www.techmeout.it/lavori/open-empower/"
     currentPage="lavori"
+    jsonLd={{
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CreativeWork",
+                "name": "Open Empower",
+                "description": "AI Platform Engineering consultancy. Piattaforme AI-ready per organizzazioni mid-market. Progetto realizzato da TechMeOut.",
+                "url": "https://www.techmeout.it/lavori/open-empower/",
+                "creator": { "@id": "https://www.techmeout.it/#organization" },
+                "about": ["AI", "Platform Engineering", "Cloud", "Consulenza"],
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.techmeout.it/" },
+                    { "@type": "ListItem", "position": 2, "name": "Lavori", "item": "https://www.techmeout.it/lavori/" },
+                    { "@type": "ListItem", "position": 3, "name": "Open Empower", "item": "https://www.techmeout.it/lavori/open-empower/" }
+                ]
+            }
+        ]
+    }}
 >
     <section class="page-hero">
         <div class="container">

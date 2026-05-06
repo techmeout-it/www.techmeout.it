@@ -35,7 +35,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.clarity.ms; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.clarity.ms; frame-ancestors 'none'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.clarity.ms https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.clarity.ms https://www.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com; frame-ancestors 'none'">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content={description}>
     {keywords && <meta name="keywords" content={keywords}>}
@@ -85,10 +85,73 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         })(window, document, "clarity", "script", "vgp1fh1v3f");
     </script>
 
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-XNN1Y2FEXH"></script>
+    <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XNN1Y2FEXH');
+    </script>
+
     <!-- Slot per contenuto head aggiuntivo -->
     <slot name="head" />
 
-    <!-- JSON-LD Structured Data -->
+    <!-- Site-wide Organization JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://www.techmeout.it/#organization",
+        "name": "TechMeOut",
+        "url": "https://www.techmeout.it",
+        "description": "Studio di sviluppo web professionale italiano. Creiamo siti web moderni, performanti e su misura.",
+        "logo": {
+            "@type": "ImageObject",
+            "@id": "https://www.techmeout.it/#logo",
+            "url": "https://www.techmeout.it/favicon.svg",
+            "contentUrl": "https://www.techmeout.it/favicon.svg",
+            "caption": "TechMeOut logo"
+        },
+        "image": { "@id": "https://www.techmeout.it/#logo" },
+        "founder": {
+            "@type": "Person",
+            "name": "Luca Berton",
+            "url": "https://lucaberton.com"
+        },
+        "foundingDate": "2024",
+        "parentOrganization": {
+            "@type": "Organization",
+            "name": "Open Empower BV",
+            "url": "https://www.openempower.com",
+            "identifier": "KvK: 94970963"
+        },
+        "knowsAbout": [
+            "Sviluppo web",
+            "Web design",
+            "SEO",
+            "Astro",
+            "Performance ottimizzata",
+            "Siti web moderni"
+        ],
+        "areaServed": { "@type": "Country", "name": "Italy" },
+        "sameAs": [
+            "https://github.com/techmeout-it"
+        ]
+    })} />
+
+    <!-- Site-wide WebSite JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://www.techmeout.it/#website",
+        "name": "TechMeOut",
+        "url": "https://www.techmeout.it",
+        "description": "Studio di sviluppo web professionale. Creiamo siti web moderni, performanti e su misura.",
+        "publisher": { "@id": "https://www.techmeout.it/#organization" },
+        "inLanguage": "it-IT"
+    })} />
+
+    <!-- Page-specific JSON-LD -->
     {jsonLd && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
 </head>
 <body>

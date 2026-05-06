@@ -8,6 +8,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     keywords="copypastelearn, tutorial devops, ansible, terraform, kubernetes, cloud engineer"
     canonicalUrl="https://www.techmeout.it/lavori/copypastelearn/"
     currentPage="lavori"
+    jsonLd={{
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CreativeWork",
+                "name": "CopyPasteLearn",
+                "description": "Tutorial pratici per imparare Ansible, Terraform e Kubernetes in modo efficace. Progetto realizzato da TechMeOut.",
+                "url": "https://www.techmeout.it/lavori/copypastelearn/",
+                "creator": { "@id": "https://www.techmeout.it/#organization" },
+                "about": ["Ansible", "Terraform", "Kubernetes", "DevOps"],
+                "inLanguage": "en-US"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.techmeout.it/" },
+                    { "@type": "ListItem", "position": 2, "name": "Lavori", "item": "https://www.techmeout.it/lavori/" },
+                    { "@type": "ListItem", "position": 3, "name": "CopyPasteLearn", "item": "https://www.techmeout.it/lavori/copypastelearn/" }
+                ]
+            }
+        ]
+    }}
 >
     <section class="page-hero">
         <div class="container">

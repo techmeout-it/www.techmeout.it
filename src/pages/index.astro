@@ -15,46 +15,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         "@context": "https://schema.org",
         "@graph": [
             {
-                "@type": "WebSite",
-                "name": "TechMeOut",
-                "url": "https://www.techmeout.it",
-                "description": "Studio di sviluppo web professionale. Creiamo siti web moderni, performanti e su misura.",
-                "publisher": { "@id": "https://www.techmeout.it/#organization" },
+                "@type": "WebPage",
+                "@id": "https://www.techmeout.it/#webpage",
+                "url": "https://www.techmeout.it/",
+                "name": "TechMeOut — Sviluppo Web Professionale",
+                "description": "Studio di sviluppo web professionale. Creiamo siti web moderni, performanti e su misura per far crescere il tuo business online.",
+                "isPartOf": { "@id": "https://www.techmeout.it/#website" },
+                "about": { "@id": "https://www.techmeout.it/#organization" },
                 "inLanguage": "it-IT"
             },
             {
-                "@type": "Organization",
-                "@id": "https://www.techmeout.it/#organization",
-                "name": "TechMeOut",
-                "url": "https://www.techmeout.it",
-                "logo": {
-                    "@type": "ImageObject",
-                    "url": "https://www.techmeout.it/favicon.svg"
-                },
-                "description": "Studio di sviluppo web professionale italiano",
-                "founder": {
-                    "@type": "Person",
-                    "name": "Luca Berton",
-                    "url": "https://lucaberton.com"
-                },
-                "parentOrganization": {
-                    "@type": "Organization",
-                    "name": "Open Empower BV",
-                    "url": "https://www.openempower.com",
-                    "identifier": "KvK: 94970963"
-                },
-                "sameAs": [
-                    "https://github.com/techmeout-it"
-                ]
-            },
-            {
                 "@type": "ProfessionalService",
+                "@id": "https://www.techmeout.it/#service",
                 "name": "TechMeOut",
                 "url": "https://www.techmeout.it",
                 "description": "Sviluppo web professionale — siti moderni, performanti e su misura",
                 "serviceType": ["Web Development", "Web Design", "SEO"],
                 "areaServed": { "@type": "Country", "name": "Italy" },
-                "availableLanguage": ["Italian", "English"]
+                "availableLanguage": ["Italian", "English"],
+                "provider": { "@id": "https://www.techmeout.it/#organization" }
             }
         ]
     }}

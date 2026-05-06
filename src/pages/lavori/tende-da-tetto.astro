@@ -4,10 +4,32 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 <BaseLayout
     title="Tende da Tetto e Campeggio — TechMeOut"
-    description="Progetto realizzato da TechMeOut: Tende da Tetto e Campeggio — la Community Italiana N°1 per gli appassionati di tende da tetto, campeggio e overlanding."
+    description="Progetto TechMeOut: Tende da Tetto e Campeggio — la Community Italiana N°1 per appassionati di tende da tetto, campeggio e overlanding."
     keywords="tende da tetto, campeggio, community, rooftop tent, overlanding, italia"
     canonicalUrl="https://www.techmeout.it/lavori/tende-da-tetto/"
     currentPage="lavori"
+    jsonLd={{
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CreativeWork",
+                "name": "Tende da Tetto e Campeggio",
+                "description": "La Community Italiana N°1 per appassionati di tende da tetto, campeggio e overlanding. Progetto realizzato da TechMeOut.",
+                "url": "https://www.techmeout.it/lavori/tende-da-tetto/",
+                "creator": { "@id": "https://www.techmeout.it/#organization" },
+                "about": ["Tende da tetto", "Campeggio", "Overlanding", "Community"],
+                "inLanguage": "it-IT"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.techmeout.it/" },
+                    { "@type": "ListItem", "position": 2, "name": "Lavori", "item": "https://www.techmeout.it/lavori/" },
+                    { "@type": "ListItem", "position": 3, "name": "Tende da Tetto e Campeggio", "item": "https://www.techmeout.it/lavori/tende-da-tetto/" }
+                ]
+            }
+        ]
+    }}
 >
     <section class="page-hero">
         <div class="container">

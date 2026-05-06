@@ -8,6 +8,28 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     keywords="t4 triveneto, volkswagen t4, van, camperizzato, community, triveneto"
     canonicalUrl="https://www.techmeout.it/lavori/t4-triveneto/"
     currentPage="lavori"
+    jsonLd={{
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "CreativeWork",
+                "name": "T4 Triveneto",
+                "description": "Community degli appassionati del Volkswagen T4. Passione e avventura nel Triveneto. Progetto realizzato da TechMeOut.",
+                "url": "https://www.techmeout.it/lavori/t4-triveneto/",
+                "creator": { "@id": "https://www.techmeout.it/#organization" },
+                "about": ["Volkswagen T4", "Community", "Van", "Triveneto"],
+                "inLanguage": "it-IT"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.techmeout.it/" },
+                    { "@type": "ListItem", "position": 2, "name": "Lavori", "item": "https://www.techmeout.it/lavori/" },
+                    { "@type": "ListItem", "position": 3, "name": "T4 Triveneto", "item": "https://www.techmeout.it/lavori/t4-triveneto/" }
+                ]
+            }
+        ]
+    }}
 >
     <section class="page-hero">
         <div class="container">
