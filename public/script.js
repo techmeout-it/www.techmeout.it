@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nav_contattaci: 'Contact Us',
 
             // Hero
-            hero_tag: 'Professional Web Development',
+            hero_tag: 'TechMeOut — Professional Web Development',
             hero_title: 'Your ideas into <span class="text-gradient">digital experiences</span>',
             hero_subtitle: 'We design and develop modern, fast and optimized websites to help your business grow online.',
             hero_cta: 'Start a project',
