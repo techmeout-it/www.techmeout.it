@@ -1,0 +1,22 @@
+# TechMeOut
+
+> TechMeOut è uno studio italiano di sviluppo web professionale: siti moderni, performanti e su misura, con design, SEO e supporto post-lancio. Affianchiamo inoltre le community digitali nell'organizzazione dei loro eventi e raduni. Contenuti in italiano; lavoriamo anche in inglese.
+
+## Pagine
+
+- [Home](https://www.techmeout.it/): servizi di sviluppo web, approccio di lavoro e contatti.
+- [I nostri lavori](https://www.techmeout.it/lavori/): portfolio completo dei progetti realizzati.
+- [Supporto alle Community](https://www.techmeout.it/community/): come aiutiamo le community digitali con siti, strumenti tech e gestione eventi.
+- [Privacy Policy](https://www.techmeout.it/privacy/): trattamento dei dati personali.
+- [Cookie Policy](https://www.techmeout.it/cookie/): tipologie di cookie usati e gestione del consenso.
+
+## Lavori
+
+- [Ansible Pilot & Ansible by Example](https://www.techmeout.it/lavori/ansible-pilot/): tutorial, guide e risorse per l'automazione DevOps con Ansible.
+- [Copy Paste Learn](https://www.techmeout.it/lavori/copypastelearn/): tutorial pratici per imparare Ansible, Terraform e Kubernetes.
+- [Terraform Pilot](https://www.techmeout.it/lavori/terraform-pilot/): imparare Terraform con approccio DevOps, tutorial e best practice per Cloud Engineer.
+- [Luca Berton](https://www.techmeout.it/lavori/luca-berton/): sito del consulente AI, Kubernetes e Cloud automation.
+- [Open Empower](https://www.techmeout.it/lavori/open-empower/): consulenza AI Platform Engineering e landing page per il mid-market.
+- [ProteinLens](https://www.techmeout.it/lavori/proteinlens/): AI Macro Nutrition Tracker per l'analisi nutrizionale.
+- [Tende da Tetto e Campeggio](https://www.techmeout.it/lavori/tende-da-tetto/): la community italiana n°1 di tende da tetto, campeggio e overlanding.
+- [T4 Triveneto](https://www.techmeout.it/lavori/t4-triveneto/): community degli appassionati del Volkswagen T4 nel Triveneto.
