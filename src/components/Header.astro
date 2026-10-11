@@ -10,7 +10,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
 // Funzione helper per generare gli href corretti
 function href(anchor: string): string {
-    return isHome ? `#${anchor}` : `${base}/index.html#${anchor}`;
+    return isHome ? `#${anchor}` : `${base}/#${anchor}`;
 }
 
 function page(file: string): string {
