@@ -1,11 +1,11 @@
 # Dependencies
-node_modules/
+node_modules
 
 # Astro build output
 dist/
 
 # Astro generated types
-.astro/
+.astro
 
 # Environment
 .env
