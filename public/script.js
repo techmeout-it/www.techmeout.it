@@ -123,8 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
             community_cases_desc: 'Here are some of the communities we actively support with our services.',
             case_tende_title: 'Rooftop Tents and Camping',
             case_tende_desc: 'Italy\'s #1 Community for Rooftop Tents and Camping. In addition to designing and developing the website <strong>tendedatettoecampeggio.it</strong>, we actively support the group in managing and organizing national gatherings: from creating registration forms to logistics coordination, to pre and post event communication. We provide digital tools that simplify the organization and ensure the success of every meetup.',
-            case_t4_title: 'T4 Triveneto',
-            case_t4_desc: 'Passion, friendship and adventure on four wheels. For the group of enthusiasts of the legendary Volkswagen T4, we built the website <strong>t4triveneto.com</strong> and support them in organizing gatherings and group meetups. We provide tools for managing registrations, participant communication and event planning, bringing a tech and organized approach to a community that lives on passion and sharing.',
+            case_t4_title: 'T4UM — Italian T4 Community',
+            case_t4_desc: 'Passion, friendship and adventure on four wheels. T4UM is the Italian community of the legendary Volkswagen T4, active since 2005: <strong>t4um.it</strong>, built with passion by TechMeOut, gathers guides, technical documents, routes and a forum with thousands of members in one place. We support the community in organizing gatherings and meetups, with tools for managing registrations, participant communication and event planning.',
             community_cta_title: 'Have a community to support?',
             community_cta_desc: 'Tell us about your group. Together we\'ll find the best tools and solutions to grow your community and organize memorable events.',
         }
