@@ -99,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
             proj_tf_desc: 'Automate better, every day. Discover the method to learn Terraform quickly and effectively, with a creative DevOps approach designed for Cloud Engineers, SysAdmins and IT professionals who want to level up their automation skills.',
             proj_vtv_desc: 'Cloud, cybersecurity and digital transformation to grow your business. Innovative IT solutions and strategic consulting to help you thrive in a fast-changing technology landscape.',
             proj_tende_desc: 'Italy\'s #1 Community for Rooftop Tents and Camping. Discover the best campsites, share your adventures and find everything you need to travel with your rooftop tent.',
-            proj_t4_desc: 'Passion, friendship and adventure on four wheels. A group of enthusiasts of the legendary Volkswagen T4, the iconic van produced from 1990 to 2003 that made van and camper history.',
             proj_cta_title: 'Yours could be next',
             proj_cta_desc: 'Want your project featured here? Tell us about your idea and let\'s build your website together.',
 

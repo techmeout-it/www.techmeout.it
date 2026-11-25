@@ -14,7 +14,6 @@ const URLS = [
   `https://${HOST}/lavori/terraform-pilot/`,
   `https://${HOST}/lavori/proteinlens/`,
   `https://${HOST}/lavori/tende-da-tetto/`,
-  `https://${HOST}/lavori/t4-triveneto/`,
   `https://${HOST}/privacy/`,
   `https://${HOST}/cookie/`,
 ];

@@ -13,7 +13,6 @@ const sites = [
     { url: 'https://terraformpilot.com',         file: 'terraformpilot.jpg' },
     { url: 'https://www.proteinlens.com',        file: 'proteinlens.jpg' },
     { url: 'https://tendedatettoecampeggio.it',  file: 'tendedatettoecampeggio.jpg' },
-    { url: 'https://www.t4triveneto.com',        file: 't4triveneto.jpg' },
 ];
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
