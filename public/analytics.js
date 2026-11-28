@@ -76,9 +76,9 @@
                 return;
             }
 
-            // Outbound
+            // Outbound (referral links carry data-referral="<partner>")
             if (isOutbound(href)) {
-                track('outbound_click', Object.assign({ outbound: true }, common));
+                track('outbound_click', Object.assign({ outbound: true, referral: link.getAttribute('data-referral') || undefined }, common));
                 return;
             }
 

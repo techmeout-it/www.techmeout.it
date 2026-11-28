@@ -35,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             svc3_desc: 'Technical and strategic optimization to help you rank on Google. Every website we build is designed to achieve the best positioning.',
             svc4_title: 'Maintenance & Support',
             svc4_desc: 'Ongoing assistance, security updates and performance monitoring to keep your website always at its best.',
+            services_privacy_note: '<strong>Privacy and cookie compliance:</strong> for the websites we build we use <a href="https://iubenda.refr.cc/default/u/luca661" target="_blank" rel="sponsored noopener" data-referral="iubenda">iubenda</a> for the cookie banner and privacy policy. <span class="services-note__disclosure">(referral link)</span>',
 
             // About
             about_tag: 'About us',
