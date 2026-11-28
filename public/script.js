@@ -72,8 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
             form_message: 'Message',
             form_message_ph: 'Tell us about your project...',
             form_submit: 'Send message',
-            form_success_title: 'Message sent!',
-            form_success_desc: 'Thank you {name}, we\'ll get back to you soon.',
+            form_note: 'The button opens your email app with the email ready to go: just press "Send".',
 
             // Footer
             footer_tagline: 'Professional web development.<br>From your idea to your website.',
@@ -410,6 +409,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ===== FORM HANDLING =====
+    const CONTACT_EMAIL = 'info@techmeout.it';
     const contactForm = document.getElementById('contactForm');
 
     if (contactForm) {
@@ -421,31 +421,56 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = formData.get('email')?.trim();
             const message = formData.get('message')?.trim();
 
-            // Basic validation
-            if (!name || !email || !message) {
-                return;
-            }
-
-            // Email validation
+            // Basic validation: show the browser's messages on the empty/invalid field
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
+            if (!name || !email || !message || !emailRegex.test(email)) {
+                contactForm.reportValidity();
                 return;
             }
 
-            // Show success (replace form content)
+            // The site has no form backend: build an email for info@techmeout.it
+            // and open the visitor's email app. Nothing is sent until they press Send.
             const currentLang = localStorage.getItem('techmeout-lang') || 'it';
-            const successTitle = currentLang === 'en' ? 'Message sent!' : 'Messaggio inviato!';
-            const successDesc = currentLang === 'en' 
-                ? `Thank you ${escapeHtml(name)}, we'll get back to you soon.`
-                : `Grazie ${escapeHtml(name)}, ti ricontatteremo presto.`;
+            const isEn = currentLang === 'en';
+            const subject = isEn
+                ? `Website enquiry – ${name}`
+                : `Richiesta dal sito – ${name}`;
+            const body = isEn
+                ? `Name: ${name}\nEmail: ${email}\n\n${message}`
+                : `Nome: ${name}\nEmail: ${email}\n\n${message}`;
+            const mailto = buildMailto(CONTACT_EMAIL, subject, body);
+
+            // Track only real submissions (analytics.js skips this form's raw submit event)
+            document.dispatchEvent(new CustomEvent('techmeout:form_submit', {
+                detail: { form: contactForm, method: 'mailto' }
+            }));
+
+            window.location.href = mailto;
+
+            // Tell the visitor what actually happened (replace form content)
+            const safeName = escapeHtml(name);
+            const successTitle = isEn ? 'Your email app has opened' : 'Si è aperta la tua app di posta';
+            const successDesc = isEn
+                ? `Thanks ${safeName}! We've prepared an email to ${CONTACT_EMAIL} with your message: check it and press <strong>Send</strong> to get it to us.`
+                : `Grazie ${safeName}! Abbiamo preparato un'email per ${CONTACT_EMAIL} con il tuo messaggio: controllala e premi <strong>Invia</strong> per farcela arrivare.`;
+            const fallback = isEn
+                ? `Didn't open? <a href="${escapeHtml(mailto)}">Try again</a> or write to us at <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>.`
+                : `Non si è aperta? <a href="${escapeHtml(mailto)}">Riprova</a> oppure scrivici a <a href="mailto:${CONTACT_EMAIL}">${CONTACT_EMAIL}</a>.`;
             contactForm.innerHTML = `
-                <div class="form-success show">
-                    <div class="form-success__icon">✓</div>
+                <div class="form-success show" role="status">
+                    <div class="form-success__icon">✉</div>
                     <h3 class="form-success__title">${successTitle}</h3>
                     <p class="form-success__desc">${successDesc}</p>
+                    <p class="form-success__desc form-success__fallback">${fallback}</p>
                 </div>
             `;
         });
+    }
+
+    function buildMailto(to, subject, body) {
+        // RFC 6068: line breaks in the body must be CRLF, percent-encoded
+        const enc = (s) => encodeURIComponent(s.replace(/\r?\n/g, '\r\n'));
+        return `mailto:${to}?subject=${enc(subject)}&body=${enc(body)}`;
     }
 
     function escapeHtml(text) {

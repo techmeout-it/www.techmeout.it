@@ -99,16 +99,28 @@
     }, { passive: true });
 
     // ===== FORM SUBMISSION TRACKING =====
-    document.addEventListener('submit', function (e) {
-        var form = e.target;
-        if (!form || form.tagName !== 'FORM') return;
-        track('form_submit', {
+    function trackFormSubmit(form, extra) {
+        track('form_submit', Object.assign({
             form_id: form.id || undefined,
             form_name: form.getAttribute('name') || undefined,
             form_action: form.getAttribute('action') || undefined,
             page_path: window.location.pathname,
-        });
+        }, extra || {}));
+    }
+    document.addEventListener('submit', function (e) {
+        var form = e.target;
+        if (!form || form.tagName !== 'FORM') return;
+        // Forms with their own validation (e.g. #contactForm) report a real
+        // submission themselves via the 'techmeout:form_submit' event below,
+        // so empty or invalid attempts are not counted.
+        if (form.getAttribute('data-track-submit') === 'manual') return;
+        trackFormSubmit(form);
     }, { passive: true });
+    document.addEventListener('techmeout:form_submit', function (e) {
+        var d = e.detail || {};
+        if (!d.form) return;
+        trackFormSubmit(d.form, { submit_method: d.method || undefined });
+    });
 
     // ===== SCROLL DEPTH TRACKING =====
     var scrollThresholds = [25, 50, 75, 90, 100];
