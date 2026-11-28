@@ -1268,11 +1268,29 @@ h1, h2, h3, h4 {
     min-height: 120px;
 }
 
-.form-note {
+.form-honeypot {
+    display: none !important;
+}
+
+.form-error {
     margin-top: 12px;
-    font-size: 0.8rem;
-    color: var(--text-muted);
+    font-size: 0.85rem;
+    color: #ff6b6b;
     text-align: center;
+}
+
+[data-theme="light"] .form-error {
+    color: #c62828;
+}
+
+.form-error a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: wait;
 }
 
 /* Form success message */
@@ -1302,15 +1320,6 @@ h1, h2, h3, h4 {
     font-size: 0.9rem;
 }
 
-.form-success__fallback {
-    margin-top: 12px;
-    font-size: 0.8rem;
-}
-
-.form-success__desc a {
-    color: var(--accent-color);
-    text-decoration: underline;
-}
 
 /* === FOOTER === */
 .footer {

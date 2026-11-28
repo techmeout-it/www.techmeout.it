@@ -322,8 +322,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         </a>
                     </div>
                 </div>
-                {/* Nessun backend: il form apre l'app di posta del visitatore con un'email già compilata per info@techmeout.it (gestito in /script.js; senza JS funziona comunque tramite action mailto). */}
-                <form class="contact__form" id="contactForm" action="mailto:info@techmeout.it" method="post" enctype="text/plain" data-track-submit="manual" novalidate>
+                {/* Invio tramite Web3Forms (fetch in /script.js, chiave pubblica in data-web3forms-key, legata a info@techmeout.it). Senza JS il form apre comunque l'app di posta tramite action mailto. */}
+                <form class="contact__form" id="contactForm" action="mailto:info@techmeout.it" method="post" enctype="text/plain" data-track-submit="manual" data-web3forms-key="d66d67dd-775e-470d-b707-1d416a521ce4" novalidate>
+                    <input type="checkbox" name="botcheck" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
                     <div class="form-group">
                         <label for="name" class="form-label" data-i18n="form_name">Nome</label>
                         <input type="text" id="name" name="name" class="form-input" data-i18n-ph="form_name_ph" placeholder="Il tuo nome" required autocomplete="name">
@@ -343,7 +344,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
                     </button>
-                    <p class="form-note" data-i18n="form_note">Il pulsante apre la tua app di posta con l'email già pronta: ti basterà premere «Invia».</p>
+                    <p class="form-error" role="alert" hidden></p>
                 </form>
             </div>
         </div>
