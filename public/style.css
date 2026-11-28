@@ -1268,6 +1268,13 @@ h1, h2, h3, h4 {
     min-height: 120px;
 }
 
+.form-note {
+    margin-top: 12px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-align: center;
+}
+
 /* Form success message */
 .form-success {
     display: none;
@@ -1293,6 +1300,16 @@ h1, h2, h3, h4 {
 .form-success__desc {
     color: var(--text-secondary);
     font-size: 0.9rem;
+}
+
+.form-success__fallback {
+    margin-top: 12px;
+    font-size: 0.8rem;
+}
+
+.form-success__desc a {
+    color: var(--accent-color);
+    text-decoration: underline;
 }
 
 /* === FOOTER === */

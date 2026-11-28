@@ -322,7 +322,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                         </a>
                     </div>
                 </div>
-                <form class="contact__form" id="contactForm" action="#" method="POST" novalidate>
+                {/* Nessun backend: il form apre l'app di posta del visitatore con un'email già compilata per info@techmeout.it (gestito in /script.js; senza JS funziona comunque tramite action mailto). */}
+                <form class="contact__form" id="contactForm" action="mailto:info@techmeout.it" method="post" enctype="text/plain" data-track-submit="manual" novalidate>
                     <div class="form-group">
                         <label for="name" class="form-label" data-i18n="form_name">Nome</label>
                         <input type="text" id="name" name="name" class="form-input" data-i18n-ph="form_name_ph" placeholder="Il tuo nome" required autocomplete="name">
@@ -342,6 +343,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                             <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
                     </button>
+                    <p class="form-note" data-i18n="form_note">Il pulsante apre la tua app di posta con l'email già pronta: ti basterà premere «Invia».</p>
                 </form>
             </div>
         </div>
